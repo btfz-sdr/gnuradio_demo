@@ -33,7 +33,7 @@
 
 <div style="width: 800px; height: 550px; overflow: hidden; border: 1px solid #ddd; border-radius: 8px; position: relative; background: #000;">
     <iframe 
-      src="https://www.beautifulzzzz.com/gnuradio/radio_simulation_tools/radio_coherent_interferometry_simulation" 
+      src="https://tuchuang.beautifulzzzz.com:3000/?path=radio_simulation_html_tools/simulation/radio_coherent_interferometry_simulation.html" 
         style="
             width: 1067px; 
             height: 733px; 
@@ -59,7 +59,7 @@
 
 <div style="width: 800px; height: 600px; overflow: hidden; border: 1px solid #ddd; border-radius: 8px; position: relative; background: #000;">
     <iframe 
-      src="https://www.beautifulzzzz.com/gnuradio/radio_simulation_tools/AoD_scanning_and_direction_finding_simulation" 
+      src="https://tuchuang.beautifulzzzz.com:3000/?path=radio_simulation_html_tools/simulation/AoD_scanning_and_direction_finding_simulation.html" 
         style="
             width: 1333px; 
             height: 1000px; 
