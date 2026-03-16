@@ -53,6 +53,7 @@ git clone git@github.com:oldprogram/gnuradio_demo.git --recurse-submodules
     - [第一节：正交解调模块][JC38_01]        
     - [第二节：FSK 模拟收发][JC38_02]     
     - [第三节：AFSK 文件收发][JC38_03]      
+    - [第四节：4FSK文件收发][JC38_04]      
 
 
 </br>
@@ -227,7 +228,7 @@ git clone git@github.com:oldprogram/gnuradio_demo.git --recurse-submodules
 [B21012]:https://www.bilibili.com/video/BV1x4qQBjESs/?vd_source=84f94348691c2906fc1038d54989b7e0         
 [B21012_01]:https://www.bilibili.com/video/BV1x4qQBjESs/?vd_source=84f94348691c2906fc1038d54989b7e0         
 [B21012_02]:https://www.bilibili.com/video/BV1x4qQBjESs/?vd_source=84f94348691c2906fc1038d54989b7e0         
-[B21013]:https://www.bilibili.com/video/BV1x4qQBjESs/?vd_source=84f94348691c2906fc1038d54989b7e0         
+[B21013]:https://www.bilibili.com/video/BV1QifnBsE5i/?vd_source=84f94348691c2906fc1038d54989b7e0         
 
 
 [QJYQ1]:https://www.bilibili.com/video/BV1KtfpYFEZZ/?share_source=copy_web&vd_source=e07622425aaa33ca0b1e9dafa0807cf4    
@@ -263,6 +264,7 @@ git clone git@github.com:oldprogram/gnuradio_demo.git --recurse-submodules
 [JC38_01_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/基础教程/23-GNU Radio FSK 收发/01-正交解调模块/README.md                 
 [JC38_02_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/基础教程/23-GNU Radio FSK 收发/02-FSK模拟收发/README.md                 
 [JC38_03_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/基础教程/23-GNU Radio FSK 收发/03-AFSK文件收发/README.md                 
+[JC38_03_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/基础教程/23-GNU Radio FSK 收发/04-4FSK文件收发/README.md                 
 
 [JCX4_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/综合教程/04- 利用 GNU Radio 和 HackRF 手把手深入了解蓝牙协议栈（从电磁波 to 01数据流 to 蓝牙数据包） /README.md
 [JCX5_DOC]:https://github.com/oldprogram/gnuradio_demo/blob/main/综合教程/05- 利用 GNU Radio 和 LimeSDR 和 WireShark 做蓝牙抓包器（上上个视频使用 HackRF）/README.md
