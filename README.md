@@ -1,3 +1,30 @@
+
+<div class="detail_turorial_infos">
+    <h3>关于 GNU Radio 系列教程</h3>
+    <p style="font-size: smaller;">
+        本系列教程致力于打造国内最实用的 GNU Radio 学习指南。内容涵盖从 <b>SDR 基础理论</b> 到 <b>复杂协议实现</b> 的全流程实践。无论你是想完成学术研究，还是进行业余电波探索，本系列都提供了从零到一的完整路径。
+    </p>
+    <p><b>教程体系：</b></p>
+    <ul style="list-style-type: none; padding-left: 5px;">
+        <li style="font-size: smaller;"><i class="fas fa-book-open"></i> <b>基础教程：</b>GNURadio 核心概念与模块使用</li>
+        <li style="font-size: smaller;"><i class="fas fa-layer-group"></i> <b>综合教程：</b>跨协议、跨设备的复杂系统集成</li>
+        <li style="font-size: smaller;"><i class="fas fa-plus-circle"></i> <b>附加教程：</b>各种 SDR 硬件适配与扩展技巧</li>
+        <li style="font-size: smaller;"><i class="fas fa-tools"></i> <b>小工具：</b>提升开发效率的脚本与实用组件</li>
+        <li style="font-size: smaller;"><i class="fas fa-magic"></i> <b>奇技淫巧：</b>不走寻常路的黑科技 SDR 玩法</li>
+    </ul>
+    <p><b>环境要求：</b></p>
+    <ul>
+        <li style="font-size: smaller;">建议运行环境：Ubuntu 22.04 / 24.04</li>
+        <li style="font-size: smaller;">软件版本：GNU Radio v3.10+</li>
+    </ul>
+    <img src="https://tuchuang.beautifulzzzz.com:3000/?path=202603/gnuradio_turorial_logo.png" style="width: 240px; border-radius: 8px; margin: 10px 0; border: 2px solid #2b8d00;" class="__web-inspector-hide-shortcut__">
+</div>
+</br>
+
+**教程主页**：https://beautifulzzzz.com/gnuradio
+
+</br>
+
 ## CLONE
 
 ```shell
@@ -9,8 +36,10 @@ git clone git@github.com:oldprogram/gnuradio_demo.git --recurse-submodules
 </br>
 
 ## 教程列表
-
 #### 基础教程：
+
+**备注：列表不再更新，在[教程主页](https://beautifulzzzz.com/gnuradio)更新了！！！**
+
 
 - [[1]. GNU Radio 系列教程（一） —— 什么是 GNU Radio][JC1]
 - [[2]. GNU Radio 系列教程（二） —— 绘制第一个信号分析流程图][JC2]
