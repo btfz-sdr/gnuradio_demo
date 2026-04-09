@@ -1,0 +1,1698 @@
+options:
+  parameters:
+    author: btfz
+    catch_exceptions: 'True'
+    category: Custom
+    cmake_opt: ''
+    comment: ''
+    copyright: beautifulzzzz.com/gnuradio
+    description: "\u4F7F\u7528\u5408\u6210\u540E\u7684 ofdm \u6A21\u5757\uFF0C\u5B9E\
+      \u73B0 b210 \u6587\u4EF6\u6536\u53D1\u7684\u6D41\u7A0B\u56FE"
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: ofdm_loopback_b210_min
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: ofdm_loopback_b210_min
+    window_size: 1280, 1024
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: fft_len
+  id: variable
+  parameters:
+    comment: ''
+    value: '64'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 8.0]
+    rotation: 0
+    state: enabled
+- name: freq
+  id: variable
+  parameters:
+    comment: ''
+    value: 2.300e9
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1296, 96.0]
+    rotation: 0
+    state: enabled
+- name: len_tag_key
+  id: variable
+  parameters:
+    comment: ''
+    value: '"packet_len"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 8.0]
+    rotation: 0
+    state: enabled
+- name: occupied_carriers
+  id: variable
+  parameters:
+    comment: ''
+    value: (list(range(-26, -21)) + list(range(-20, -7)) + list(range(-6, 0)) + list(range(1,
+      7)) + list(range(8, 21)) + list(range(22, 27)),)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 48.0]
+    rotation: 0
+    state: enabled
+- name: packet_len
+  id: variable
+  parameters:
+    comment: ''
+    value: '96'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 8.0]
+    rotation: 0
+    state: enabled
+- name: pilot_carriers
+  id: variable
+  parameters:
+    comment: ''
+    value: ((-21, -7, 7, 21,),)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 48.0]
+    rotation: 0
+    state: enabled
+- name: pilot_symbols
+  id: variable
+  parameters:
+    comment: ''
+    value: ((1, 1, 1, -1,),)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1168, 48.0]
+    rotation: 0
+    state: enabled
+- name: rx_msg
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: 4,0,1,2
+    label: "\"\u6536\u5230\u7684\u4FE1\u606F\""
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 576.0]
+    rotation: 180
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 8.0]
+    rotation: 0
+    state: enabled
+- name: sync_word1
+  id: variable
+  parameters:
+    comment: ''
+    value: '[0., 0., 0., 0., 0., 0., 0., 1.41421356, 0., -1.41421356, 0., 1.41421356,
+      0., -1.41421356, 0., -1.41421356, 0., -1.41421356, 0., 1.41421356, 0., -1.41421356,
+      0., 1.41421356, 0., -1.41421356, 0., -1.41421356, 0., -1.41421356, 0., -1.41421356,
+      0., 1.41421356, 0., -1.41421356, 0., 1.41421356, 0., 1.41421356, 0., 1.41421356,
+      0., -1.41421356, 0., 1.41421356, 0., 1.41421356, 0., 1.41421356, 0., -1.41421356,
+      0., 1.41421356, 0., 1.41421356, 0., 1.41421356, 0., 0., 0., 0., 0., 0.]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 48.0]
+    rotation: 0
+    state: enabled
+- name: sync_word2
+  id: variable
+  parameters:
+    comment: ''
+    value: '[0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, 1, 1,
+      1, -1, -1, -1, -1, -1, 1, -1, -1, 1, -1, 0, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1,
+      1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1, 0, 0, 0, 0, 0] '
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 48.0]
+    rotation: 0
+    state: enabled
+- name: uhd_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: "uhd gain\uFF1A(0~70)"
+    gui_hint: 1,0,1,2
+    label: GAIN
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '70'
+    value: '48'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [984, 632.0]
+    rotation: 0
+    state: enabled
+- name: blocks_msgpair_to_var_0
+  id: blocks_msgpair_to_var
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    target: rx_msg
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 520.0]
+    rotation: 180
+    state: enabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: '*0.05'
+    const: '0.05'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 216.0]
+    rotation: 0
+    state: enabled
+- name: blocks_stream_to_tagged_stream_0
+  id: blocks_stream_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    len_tag_key: len_tag_key
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_len: packet_len
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 208.0]
+    rotation: 0
+    state: enabled
+- name: blocks_tag_debug_0
+  id: blocks_tag_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    display: 'False'
+    filter: '""'
+    name: Rx Packets
+    num_inputs: '1'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 592.0]
+    rotation: 180
+    state: enabled
+- name: blocks_tag_gate_0
+  id: blocks_tag_gate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "\u4F7F\u7528\u6B64\u5757\u53EF\u4EE5\u963B\u6B62\u6807\u7B7E\u4F20\u64AD"
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    propagate_tags: 'False'
+    single_key: '""'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1024, 208.0]
+    rotation: 0
+    state: enabled
+- name: blocks_uchar_to_float_0
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [456, 448.0]
+    rotation: 180
+    state: enabled
+- name: blocks_vector_source_x_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: ()
+    type: byte
+    vector: range(packet_len)
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 88.0]
+    rotation: 0
+    state: disabled
+- name: digital_ofdm_rx_0
+  id: digital_ofdm_rx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    cp_len: fft_len//4
+    fft_len: fft_len
+    header_mod: '"BPSK"'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    occupied_carriers: occupied_carriers
+    packet_len_key: '"rx_len"'
+    payload_mod: '"QPSK"'
+    pilot_carriers: pilot_carriers
+    pilot_symbols: pilot_symbols
+    scramble_bits: 'False'
+    sync_word1: sync_word1
+    sync_word2: sync_word2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 436.0]
+    rotation: 180
+    state: enabled
+- name: digital_ofdm_tx_0
+  id: digital_ofdm_tx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    cp_len: fft_len//4
+    fft_len: fft_len
+    header_mod: '"BPSK"'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    occupied_carriers: occupied_carriers
+    packet_len_key: len_tag_key
+    payload_mod: '"QPSK"'
+    pilot_carriers: pilot_carriers
+    pilot_symbols: pilot_symbols
+    rolloff: '0'
+    scramble_bits: 'False'
+    sync_word1: sync_word1
+    sync_word2: sync_word2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 124.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ time\nimport struct\nimport os\n\nclass msg_to_frame(gr.sync_block):\n   \
+      \ def __init__(self, use_timestamp=False, idel_send=True, idle_char=0x55, msg_repeat=1,\
+      \ data_repeat=1, payload_size=36):\n        # \u521D\u59CB\u5316\uFF1A\u65E0\
+      \u8F93\u5165\u6D41\uFF0C\u8F93\u51FA\u6D41\u4E3A\u5B57\u8282 (uint8)\n     \
+      \   gr.sync_block.__init__(self, name='Message to Frame', in_sig=None, out_sig=[np.uint8])\n\
+      \        \n        # \u6CE8\u518C\u6D88\u606F\u8F93\u5165\u7AEF\u53E3\uFF0C\u7528\
+      \u4E8E\u63A5\u6536\u4E0A\u6E38\u53D1\u9001\u7684\u6D88\u606F\u5305 (PDU/Message)\n\
+      \        self.message_port_register_in(pmt.intern(\"msg_in\"))\n        self.set_msg_handler(pmt.intern(\"\
+      msg_in\"), self.handle_msg)\n        \n        self.use_timestamp = use_timestamp\n\
+      \        self.idel_send = idel_send        # \u7A7A\u95F2\u65F6\u662F\u5426\u53D1\
+      \u4FE1\u606F\uFF08\u6709\u4E9B\u65F6\u5019\u4F7F\u7528\u786C\u4EF6\uFF0C\u7A7A\
+      \u95F2\u65F6\u9700\u8981\u53D1\u4E1C\u897F\uFF09 \n        self.idle_char =\
+      \ idle_char        # \u7A7A\u95F2\u65F6\u8981\u53D1\u9001\u7684\u4FE1\u606F\n\
+      \        self.msg_repeat = msg_repeat      # \u6587\u672C\u6D88\u606F\u91CD\u590D\
+      \u53D1\u9001\u6B21\u6570\uFF08\u6297\u5E72\u6270\uFF09\n        self.data_repeat\
+      \ = data_repeat    # \u6587\u4EF6\u5757\u91CD\u590D\u53D1\u9001\u6B21\u6570\n\
+      \        self.payload_size = payload_size  # \u6BCF\u4E2A\u5E27\u643A\u5E26\u7684\
+      \u6700\u5927\u539F\u59CB\u6570\u636E\u5B57\u8282\u6570\n        \n        self.sn\
+      \ = 0                       # \u5E8F\u5217\u53F7 (Sequence Number)\n       \
+      \ self.frame_queue = []             # \u5B58\u50A8\u5DF2\u7ECF\u6253\u5305\u597D\
+      \u7684\u5B8C\u6574\u5E27 (\u7B49\u5F85 work \u51FD\u6570\u8F93\u51FA)\n    \
+      \    self.file_queue = []              # \u5B58\u50A8\u5F85\u5904\u7406\u7684\
+      \u4EFB\u52A1\u4FE1\u606F (\u6587\u672C\u6216\u6587\u4EF6\u8DEF\u5F84)\n    \
+      \    self.file_handle = None           # \u5F53\u524D\u6B63\u5728\u8BFB\u53D6\
+      \u7684\u6587\u4EF6\u53E5\u67C4\n\n    def _create_frame_bytes(self, content_bytes):\n\
+      \        \"\"\"\u6838\u5FC3\u65B9\u6CD5\uFF1A\u5C06\u539F\u59CB\u5B57\u8282\u5C01\
+      \u88C5\u6210\u7B26\u5408\u534F\u8BAE\u5B9A\u4E49\u7684\u53D8\u957F\u5E27\"\"\
+      \"\n        # 1. \u5E27\u5934 (3\u5B57\u8282)\uFF1A\u540C\u6B65\u5B57\u8282\
+      \ 0xAA 0xBB + \u5F53\u524D\u5E8F\u5217\u53F7\n        header = [0xAA, 0xBB,\
+      \ self.sn & 0xFF]\n        \n        # 2. \u65F6\u95F4\u6233 (\u53EF\u9009\uFF0C\
+      4\u5B57\u8282)\uFF1A\u4F7F\u7528\u5927\u7AEF\u5E8F\u7F16\u7801\u6BEB\u79D2\u7EA7\
+      \u65F6\u95F4\n        ts = list(struct.pack(\">I\", int(time.time()*1000) &\
+      \ 0xFFFFFFFF)) if self.use_timestamp else []\n        \n        # 3. \u957F\u5EA6\
+      \u5B57\u6BB5 (1\u5B57\u8282)\uFF1A\u8BB0\u5F55 Data \u5B57\u6BB5\u7684\u5B9E\
+      \u9645\u957F\u5EA6\n        content_len = len(content_bytes) & 0xFF\n      \
+      \  length_field = [content_len]\n        \n        # 4. \u8BA1\u7B97\u6821\u9A8C\
+      \u548C\uFF1A\u5BF9 [Header + TS + Len + Data] \u6C42\u548C\u53D6\u4F4E8\u4F4D\
+      \n        body = header + ts + length_field + list(content_bytes)\n        checksum\
+      \ = [sum(body) & 0xFF]\n        \n        # 5. \u7EC4\u5408\u6700\u7EC8\u5305\
+      \uFF1A\u4E3B\u4F53 + \u6821\u9A8C\u4F4D + \u5E27\u5C3E (0xFF)\n        full_packet\
+      \ = body + checksum + [0xFF]\n        return full_packet\n\n    def handle_msg(self,\
+      \ msg):\n        \"\"\"\u6D88\u606F\u7AEF\u53E3\u56DE\u8C03\u51FD\u6570\uFF1A\
+      \u5904\u7406\u5F02\u6B65\u6536\u5230\u7684\u53D1\u9001\u6307\u4EE4\"\"\"\n \
+      \       try:\n            # \u5C06 PMT \u683C\u5F0F\u6D88\u606F\u8F6C\u4E3A\
+      \ Python \u7C7B\u578B\n            content = pmt.to_python(pmt.cdr(msg) if pmt.is_pair(msg)\
+      \ else msg)\n            \n            # \u5173\u952E\uFF1A\u6BCF\u6B21\u6536\
+      \u5230\u65B0\u4EFB\u52A1\u65F6\u5F3A\u5236\u9012\u589E SN\uFF0C\u9632\u6B62\u63A5\
+      \u6536\u7AEF\u56E0\u4E3A SN \u76F8\u540C\u800C\u8BEF\u53BB\u91CD\n         \
+      \   self.sn = (self.sn + 1) % 256\n            \n            if isinstance(content,\
+      \ str) and content.startswith(\"send file:\"):\n                # \u5904\u7406\
+      \u6587\u4EF6\u53D1\u9001\u6307\u4EE4\uFF1Asend file:\u8DEF\u5F84\n         \
+      \       fpath = content.split(\"send file:\")[1].strip()\n                if\
+      \ os.path.exists(fpath):\n                    fname = os.path.basename(fpath)\n\
+      \                    fsize = os.path.getsize(fpath)\n                    # \u4EFB\
+      \u52A11\uFF1A\u6784\u9020\u4E00\u4E2A\u5305\u542B\u6587\u4EF6\u540D\u548C\u5927\
+      \u5C0F\u7684\u6587\u672C\u5E27\uFF0C\u901A\u77E5\u63A5\u6536\u7AEF\u51C6\u5907\
+      \u63A5\u6536\n                    header_cmd = f\"file:{fname} size:{fsize}\"\
+      .encode()\n                    self.file_queue.append({'type':'msg', 'data':\
+      \ header_cmd})\n                    # \u4EFB\u52A12\uFF1A\u6807\u8BB0\u6587\u4EF6\
+      \u4EFB\u52A1\uFF0C\u540E\u7EED\u5728 work \u4E2D\u5206\u5757\u8BFB\u53D6\n \
+      \                   self.file_queue.append({'type':'file', 'path': fpath})\n\
+      \            else:\n                # \u5904\u7406\u666E\u901A\u6587\u672C\u6D88\
+      \u606F\u53D1\u9001\n                self.file_queue = [] # \u65B0\u6D88\u606F\
+      \u5177\u6709\u62A2\u5360\u6027\uFF0C\u6E05\u7A7A\u4E4B\u524D\u7684\u4EFB\u52A1\
+      \n                if self.file_handle: self.file_handle.close(); self.file_handle\
+      \ = None\n                self.file_queue.append({'type':'msg', 'data': str(content).encode()})\n\
+      \        except: pass\n\n    def work(self, input_items, output_items):\n  \
+      \      \"\"\"\u6D41\u5904\u7406\u6838\u5FC3\uFF1A\u8D1F\u8D23\u5C06 frame_queue\
+      \ \u4E2D\u7684\u6570\u636E\u642C\u8FD0\u5230 GNU Radio \u8F93\u51FA Buffer\"\
+      \"\"\n        out = output_items[0]\n        noutput = len(out)\n        bytes_produced\
+      \ = 0\n\n        # \u53EA\u8981\u8F93\u51FA\u7F13\u5B58\u6709\u7A7A\u95F4\uFF0C\
+      \u5C31\u6301\u7EED\u751F\u4EA7\u6570\u636E\n        while bytes_produced < noutput:\n\
+      \            # \u7B2C\u4E00\u6B65\uFF1A\u5982\u679C\u5F53\u524D\u6CA1\u6709\u5F85\
+      \u53D1\u9001\u7684\u5E27\uFF0C\u5219\u4ECE\u4EFB\u52A1\u961F\u5217\u4E2D\u201C\
+      \u53D6\u8D27\u201D\u5E76\u6253\u5305\n            if not self.frame_queue:\n\
+      \                if self.file_queue:\n                    task = self.file_queue[0]\n\
+      \                    if task['type'] == 'msg':\n                        # \u6253\
+      \u5305\u6587\u672C\u6D88\u606F\u4EFB\u52A1\n                        frame =\
+      \ self._create_frame_bytes(task['data'])\n                        for _ in range(self.msg_repeat):\n\
+      \                            self.frame_queue.append(list(frame))\n        \
+      \                self.sn = (self.sn + 1) % 256 # \u4EFB\u52A1\u5B8C\u6210\u540E\
+      \ SN \u81EA\u589E\n                        self.file_queue.pop(0)\n        \
+      \            elif task['type'] == 'file':\n                        # \u5904\u7406\
+      \u6587\u4EF6\u5757\u8BFB\u53D6\u4EFB\u52A1\n                        if not self.file_handle:\
+      \ self.file_handle = open(task['path'], 'rb')\n                        chunk\
+      \ = self.file_handle.read(self.payload_size)\n                        if chunk:\n\
+      \                            # \u6B63\u5E38\u8BFB\u53D6\u5230\u6587\u4EF6\u5757\
+      \n                            frame = self._create_frame_bytes(chunk)\n    \
+      \                        for _ in range(self.data_repeat):\n               \
+      \                 self.frame_queue.append(list(frame))\n                   \
+      \         self.sn = (self.sn + 1) % 256\n                        else:\n   \
+      \                         # \u6587\u4EF6\u8BFB\u53D6\u7ED3\u675F\uFF0C\u53D1\
+      \u9001\u4E00\u4E2A EOF (End of File) \u5E27\u544A\u77E5\u63A5\u6536\u7AEF\n\
+      \                            self.frame_queue.append(list(self._create_frame_bytes(b\"\
+      EOF\")))\n                            self.file_handle.close(); self.file_handle\
+      \ = None\n                            self.file_queue.pop(0)\n             \
+      \   else: \n                    if self.idel_send:\n                       \
+      \ # --- \u5173\u952E\uFF1A\u6CA1\u6709\u4EFB\u52A1\u65F6\uFF0C\u586B\u5145 idle_char\
+      \ ---\n                        remaining = noutput - bytes_produced\n      \
+      \                  # \u5C06\u5269\u4F59\u6240\u6709\u7A7A\u95F4\u586B\u6EE1\
+      \ idle_char (self.idle_char \u5728 __init__ \u4E2D\u5B9A\u4E49)\n          \
+      \              out[bytes_produced:noutput] = np.full(remaining, self.idle_char,\
+      \ dtype=np.uint8)\n                        bytes_produced = noutput\n      \
+      \              break\n\n            # \u7B2C\u4E8C\u6B65\uFF1A\u5C06 frame_queue\
+      \ \u4E2D\u6253\u5305\u597D\u7684\u5E27\u5199\u5165\u8F93\u51FA\u6D41\n     \
+      \       if self.frame_queue:\n                curr_frame = self.frame_queue[0]\n\
+      \                f_len = len(curr_frame)\n                \n               \
+      \ # \u5FC5\u987B\u4FDD\u8BC1\u5F53\u524D work \u5269\u4F59\u7A7A\u95F4\u8DB3\
+      \u4EE5\u653E\u4E0B\u201C\u4E00\u6574\u5E27\u201D\uFF0C\u9632\u6B62\u5E27\u88AB\
+      \u5207\u65AD\n                if (noutput - bytes_produced) >= f_len:\n    \
+      \                # \u5199\u5165\u6570\u636E\u5230\u8F93\u51FA Buffer\n     \
+      \               out[bytes_produced : bytes_produced + f_len] = np.array(curr_frame,\
+      \ dtype=np.uint8)\n                    \n                    # \u91CD\u8981\uFF1A\
+      \u5728\u6BCF\u4E00\u5E27\u7684\u8D77\u59CB\u5B57\u8282\u4F4D\u7F6E\u6253\u4E0A\
+      \ 'packet_len' \u6807\u7B7E\n                    # \u8FD9\u5BF9\u4E8E\u540E\u7EED\
+      \u7684 OFDM \u8C03\u5236\u7B49 Tagged Stream \u6A21\u5757\u81F3\u5173\u91CD\u8981\
+      \n                    tag_pos = self.nitems_written(0) + bytes_produced\n  \
+      \                  self.add_item_tag(0, tag_pos, pmt.intern(\"packet_len\"),\
+      \ pmt.from_long(f_len))\n                    \n                    bytes_produced\
+      \ += f_len\n                    self.frame_queue.pop(0) # \u8BE5\u5E27\u5DF2\
+      \u53D1\u9001\uFF0C\u79FB\u51FA\u961F\u5217\n                else: \n       \
+      \             # \u7A7A\u95F4\u4E0D\u8DB3\uFF0C\u7559\u5230\u4E0B\u4E00\u6B21\
+      \ work \u8C03\u7528\n                    break\n                    \n     \
+      \   return bytes_produced\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_repeat: '16'
+    idel_send: 'False'
+    idle_char: '0x55'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg_repeat: '40'
+    payload_size: packet_len-10
+    use_timestamp: 'True'
+  states:
+    _io_cache: ('Message to Frame', 'msg_to_frame', [('use_timestamp', 'False'), ('idel_send',
+      'True'), ('idle_char', '85'), ('msg_repeat', '1'), ('data_repeat', '1'), ('payload_size',
+      '36')], [('msg_in', 'message', 1)], [('0', 'byte', 1)], '', ['data_repeat',
+      'idel_send', 'idle_char', 'msg_repeat', 'payload_size', 'use_timestamp'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 176.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ time\nimport struct\nimport os\n\nclass fast_frame_receiver(gr.sync_block):\n\
+      \    def __init__(self, use_timestamp=False):\n        # \u521D\u59CB\u5316\uFF1A\
+      \u8F93\u5165\u4E3A\u5B57\u8282\u6D41 (uint8)\uFF0C\u65E0\u8F93\u51FA\u6D41\uFF08\
+      \u901A\u8FC7\u6D88\u606F\u7AEF\u53E3\u8F93\u51FA\u7ED3\u679C\uFF09\n       \
+      \ gr.sync_block.__init__(self, name='Fast Packet Receiver', in_sig=[np.uint8],\
+      \ out_sig=None)\n        \n        # \u6CE8\u518C\u6D88\u606F\u8F93\u51FA\u7AEF\
+      \u53E3\uFF0C\u7528\u4E8E\u5C06\u89E3\u6790\u540E\u7684\u6587\u672C\u6216\u7CFB\
+      \u7EDF\u72B6\u6001\u53D1\u5F80 UI \u6216 Debug \u6A21\u5757\n        self.message_port_register_out(pmt.intern(\"\
+      msg_out\"))\n        \n        self.use_timestamp = use_timestamp\n        self.byte_buffer\
+      \ = []      # \u5B57\u8282\u7F13\u5B58\u6C60\uFF0C\u7528\u4E8E\u5904\u7406\u8DE8\
+      \ work \u8C03\u7528\u7684\u6570\u636E\u62FC\u63A5\n        self.last_sn = -1\
+      \          # \u4E0A\u4E00\u6B21\u5904\u7406\u6210\u529F\u7684\u5E8F\u5217\u53F7\
+      \uFF0C\u7528\u4E8E\u53BB\u91CD\n        \n        # \u6587\u4EF6\u63A5\u6536\
+      \u72B6\u6001\u7BA1\u7406\n        self.active_file = None    # \u5F53\u524D\u6253\
+      \u5F00\u7684\u6587\u4EF6\u5BF9\u8C61\n        self.current_filename = \"\" #\
+      \ \u5F53\u524D\u6B63\u5728\u63A5\u6536\u7684\u6587\u4EF6\u540D\n        self.total_size\
+      \ = 0        # \u53D1\u9001\u7AEF\u544A\u77E5\u7684\u6587\u4EF6\u603B\u5927\u5C0F\
+      \n        self.bytes_received = 0    # \u5DF2\u7D2F\u8BA1\u6536\u5230\u7684\u6709\
+      \u6548\u5B57\u8282\u6570\n        self.last_percent = -1     # \u4E0A\u4E00\u6B21\
+      \u53D1\u5E03\u7684\u8FDB\u5EA6\u767E\u5206\u6BD4\uFF08\u9632\u6B62\u91CD\u590D\
+      \u53D1\u5E03\u76F8\u540C\u8FDB\u5EA6\uFF09\n\n    def work(self, input_items,\
+      \ output_items):\n        \"\"\"\u6D41\u5904\u7406\u6838\u5FC3\uFF1A\u4ECE\u8FDE\
+      \u7EED\u5B57\u8282\u6D41\u4E2D\u5207\u5206\u51FA\u5B8C\u6574\u7684\u5E27\"\"\
+      \"\n        in_data = input_items[0]\n        # \u5C06\u65B0\u5230\u8FBE\u7684\
+      \u5B57\u8282\u5B58\u5165\u7F13\u5B58\u6C60\n        self.byte_buffer.extend(in_data.tolist())\n\
+      \        \n        # \u5B9A\u4E49\u5305\u5934\u5FC5\u8BFB\u957F\u5EA6\uFF1A\
+      Sync(2)+SN(1)+Len(1) = 4\u5B57\u8282\uFF1B\u82E5\u542BTS\u5219+4\n        header_base\
+      \ = 8 if self.use_timestamp else 4\n        \n        # \u53EA\u8981\u7F13\u5B58\
+      \u6C60\u6570\u636E\u591F\u957F\uFF0C\u5C31\u5C1D\u8BD5\u89E3\u6790\n       \
+      \ while len(self.byte_buffer) >= header_base:\n            # 1. \u5BFB\u627E\
+      \u540C\u6B65\u5934 0xAA 0xBB\n            if self.byte_buffer[0] == 0xAA and\
+      \ self.byte_buffer[1] == 0xBB:\n                # 2. \u6839\u636E\u534F\u8BAE\
+      \u5B9A\u4F4D\u957F\u5EA6\u5B57\u6BB5 (Payload Length)\n                len_idx\
+      \ = 7 if self.use_timestamp else 3\n                payload_len = self.byte_buffer[len_idx]\n\
+      \                \n                # \u8BA1\u7B97\u8BE5\u5E27\u7684\u603B\u7406\
+      \u8BBA\u957F\u5EA6\uFF1A\u5934\u90E8 + Payload + Checksum(1) + End(1)\n    \
+      \            total_len = len_idx + 1 + payload_len + 2\n                \n \
+      \               # \u5982\u679C\u7F13\u5B58\u6C60\u8FD8\u6CA1\u6536\u9F50\u8FD9\
+      \u4E00\u6574\u5E27\uFF0C\u5219\u8DF3\u51FA\u5FAA\u73AF\u7B49\u5F85\u540E\u7EED\
+      \u6570\u636E\n                if len(self.byte_buffer) < total_len: \n     \
+      \               break\n                \n                # \u63D0\u53D6\u5B8C\
+      \u6574\u5E27\u6570\u636E\u8FDB\u884C\u540E\u7EED\u5904\u7406\n             \
+      \   packet = bytes(self.byte_buffer[:total_len])\n                \n       \
+      \         # 3. \u534F\u8BAE\u9A8C\u8BC1\uFF1A\u68C0\u67E5\u5E27\u5C3E (0xFF)\
+      \ \u548C \u6821\u9A8C\u548C (Sum of Body)\n                if packet[-1] ==\
+      \ 0xFF and (sum(packet[:-2]) & 0xFF) == packet[-2]:\n                    self._handle_packet(packet,\
+      \ payload_len)\n                    # \u5904\u7406\u6210\u529F\uFF0C\u4ECE\u7F13\
+      \u5B58\u6C60\u4E2D\u79FB\u9664\u8FD9\u4E00\u5E27\n                    self.byte_buffer\
+      \ = self.byte_buffer[total_len:]\n                    continue # \u7EE7\u7EED\
+      \u5904\u7406\u7F13\u5B58\u6C60\u5269\u4F59\u6570\u636E\n                \n \
+      \               # \u6821\u9A8C\u5931\u8D25\uFF1A\u8BF4\u660E\u5F53\u524D 0xAABB\
+      \ \u53EF\u80FD\u662F\u4F2A\u540C\u6B65\uFF0C\u4E22\u5F03\u5F53\u524D\u5B57\u8282\
+      \u7EE7\u7EED\u6ED1\u52A8\u5BFB\u627E\n                self.byte_buffer.pop(0)\n\
+      \            else:\n                # \u6CA1\u627E\u5230\u540C\u6B65\u5934\uFF0C\
+      \u5411\u540E\u6ED1\u52A8 1 \u5B57\u8282\n                self.byte_buffer.pop(0)\n\
+      \        \n        # \u5F02\u5E38\u9632\u62A4\uFF1A\u5982\u679C\u7F13\u5B58\u6C60\
+      \u5806\u79EF\u8FC7\u5927\u4E14\u65E0\u6CD5\u89E3\u6790\uFF08\u5931\u6B65\uFF09\
+      \uFF0C\u6E05\u7406\u65E7\u6570\u636E\u9632\u6B62\u5185\u5B58\u6CC4\u6F0F\n \
+      \       if len(self.byte_buffer) > 4096: \n            self.byte_buffer = self.byte_buffer[-512:]\n\
+      \            \n        return len(in_data)\n\n    def _handle_packet(self, packet,\
+      \ payload_len):\n        \"\"\"\u5E27\u53BB\u91CD\u4E0E\u57FA\u7840\u4FE1\u606F\
+      \u63D0\u53D6\"\"\"\n        sn = packet[2]\n        latency = 0\n        data_start\
+      \ = 8 if self.use_timestamp else 4\n        \n        # \u63D0\u53D6\u65F6\u95F4\
+      \u6233\u5E76\u8BA1\u7B97\u65F6\u5EF6 (Latency)\n        if self.use_timestamp:\n\
+      \            try:\n                ts = struct.unpack(\">I\", packet[3:7])[0]\n\
+      \                latency = (int(time.time()*1000) - ts) & 0xFFFFFFFF\n     \
+      \       except: pass\n\n        # \u63D0\u53D6 Payload \u539F\u59CB\u6570\u636E\
+      \n        content = packet[data_start : data_start + payload_len]\n        \n\
+      \        # \u5E8F\u5217\u53F7\u53BB\u91CD\u903B\u8F91\uFF1A\u53EA\u6709\u5F53\
+      \ SN \u53D1\u751F\u53D8\u5316\u65F6\u624D\u8BA4\u4E3A\u662F\u65B0\u5305\uFF08\
+      \u6297\u591A\u5F84/\u91CD\u590D\u63A5\u6536\uFF09\n        if sn != self.last_sn:\n\
+      \            self._process_content(content, sn, latency)\n            self.last_sn\
+      \ = sn\n\n    def _process_content(self, data, sn, latency):\n        \"\"\"\
+      \u5177\u4F53\u4E1A\u52A1\u903B\u8F91\u5904\u7406\uFF1A\u6587\u4EF6\u6307\u4EE4\
+      \u89E3\u6790\u3001\u6587\u4EF6\u5199\u5165\u6216\u6D88\u606F\u663E\u793A\"\"\
+      \"\n        \n        # \u903B\u8F91 1\uFF1A\u8BC6\u522B\u6587\u4EF6\u5934\u6307\
+      \u4EE4 (\u4F8B\u5982 \"file:a.jpg size:5000\")\n        if data.startswith(b\"\
+      file:\"):\n            try:\n                info = data.decode('utf-8', errors='ignore')\n\
+      \                parts = info.split(\" \")\n                fname = parts[0].split(\"\
+      :\")[1]\n                \n                # \u89E3\u6790\u603B\u5927\u5C0F\u5B57\
+      \u6BB5\u4EE5\u4FBF\u540E\u7EED\u8BA1\u7B97\u767E\u5206\u6BD4\n             \
+      \   self.total_size = 0\n                for p in parts:\n                 \
+      \   if p.startswith(\"size:\"):\n                        self.total_size = int(p.split(\"\
+      :\")[1])\n                \n                self.current_filename = \"recv_\"\
+      \ + fname\n                self.bytes_received = 0\n                self.last_percent\
+      \ = -1\n                \n                # \u5F00\u542F\u65B0\u6587\u4EF6\uFF08\
+      \u82E5\u6709\u65E7\u6587\u4EF6\u672A\u5173\u95ED\u5219\u5148\u5173\u95ED\uFF09\
+      \n                if self.active_file: self.active_file.close()\n          \
+      \      self.active_file = open(self.current_filename, \"wb\")\n            \
+      \    self._pub(f\"SYS: Receiving {fname} ({self.total_size} bytes)\", sn, latency)\n\
+      \            except Exception as e:\n                self._pub(f\"SYS_ERROR:\
+      \ Header parse failed {str(e)}\", sn, latency)\n            return\n\n     \
+      \   # \u903B\u8F91 2\uFF1A\u8BC6\u522B\u6587\u4EF6\u7ED3\u675F\u7B26\n     \
+      \   if data == b\"EOF\":\n            if self.active_file:\n               \
+      \ self.active_file.close()\n                self.active_file = None\n      \
+      \          self._pub(f\"SYS: File {self.current_filename} saved.\", sn, latency)\n\
+      \                self.total_size = 0 # \u91CD\u7F6E\u72B6\u6001\n          \
+      \  return\n\n        # \u903B\u8F91 3\uFF1A\u6587\u4EF6\u6570\u636E\u5199\u5165\
+      \u4E0E\u8FDB\u5EA6\u663E\u793A\n        if self.active_file:\n            self.active_file.write(data)\n\
+      \            self.active_file.flush() # \u786E\u4FDD\u6570\u636E\u5373\u65F6\
+      \u5199\u5165\u78C1\u76D8\n            self.bytes_received += len(data)\n   \
+      \         \n            # \u8BA1\u7B97\u5E76\u53D1\u5E03\u8FDB\u5EA6\u767E\u5206\
+      \u6BD4\uFF08\u4EC5\u5728\u767E\u5206\u6BD4\u6570\u503C\u53D8\u5316\u65F6\u53D1\
+      \u5E03\uFF0C\u51CF\u5C11\u6D88\u606F\u538B\u529B\uFF09\n            if self.total_size\
+      \ > 0:\n                percent = int((self.bytes_received / self.total_size)\
+      \ * 100)\n                if percent > self.last_percent:\n                \
+      \    self._pub(f\"Progress: {percent}%\", sn, latency)\n                   \
+      \ self.last_percent = percent\n            else:\n                self._pub(f\"\
+      RX_CHUNK: {self.bytes_received} bytes\", sn, latency)\n        else:\n     \
+      \       # \u903B\u8F91 4\uFF1A\u666E\u901A\u6587\u672C\u6D88\u606F\u89E3\u6790\
+      \n            try:\n                msg = data.decode('utf-8')\n           \
+      \     self._pub(msg, sn, latency)\n            except:\n                # \u82E5\
+      \u65E0\u6CD5\u89E3\u7801\u4E3A UTF-8\uFF0C\u5219\u663E\u793A\u5341\u516D\u8FDB\
+      \u5236\u539F\u59CB\u7801\n                self._pub(f\"HEX: {data.hex()[:20]}...\"\
+      , sn, latency)\n\n    def _pub(self, content, sn, latency):\n        \"\"\"\u7EDF\
+      \u4E00\u7684\u6D88\u606F\u53D1\u5E03\u51FD\u6570\uFF1A\u5C01\u88C5\u5143\u6570\
+      \u636E\u5B57\u5178\u5E76\u53D1\u9001\u81F3\u6D88\u606F\u7AEF\u53E3\"\"\"\n \
+      \       meta = pmt.make_dict()\n        meta = pmt.dict_add(meta, pmt.intern(\"\
+      sn\"), pmt.from_long(sn))\n        meta = pmt.dict_add(meta, pmt.intern(\"latency\"\
+      ), pmt.from_long(latency))\n        \n        # \u5C06\u7ED3\u679C\u53D1\u5E03\
+      \u5230 \"msg_out\" \u7AEF\u53E3\uFF0C\u4F9B\u4E0B\u6E38\u7684 Message Debug\
+      \ \u7B49\u6A21\u5757\u4F7F\u7528\n        self.message_port_pub(pmt.intern(\"\
+      msg_out\"), pmt.cons(meta, pmt.to_pmt(str(content))))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    use_timestamp: 'True'
+  states:
+    _io_cache: ('Fast Packet Receiver', 'fast_frame_receiver', [('use_timestamp',
+      'False')], [('0', 'byte', 1)], [('msg_out', 'message', 1)], '', ['use_timestamp'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 520.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_const_sink_x_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"red"'
+    color2: '"red"'
+    color3: '"red"'
+    color4: '"red"'
+    color5: '"red"'
+    color6: '"red"'
+    color7: '"red"'
+    color8: '"red"'
+    color9: '"red"'
+    comment: ''
+    grid: 'False'
+    gui_hint: 2,0,1,1
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: "\"\u53D1\u9001\u661F\u5EA7\""
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1232, 296.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_edit_box_msg_0
+  id: qtgui_edit_box_msg
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gui_hint: 5,0,1,2
+    is_pair: 'True'
+    is_static: 'True'
+    key: msg_send
+    label: input
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: string
+    value: "\"\u53D1\u9001\u4FE1\u606F\uFF08\u652F\u6301\u53D1\u9001\u6587\u4EF6\uFF1A\
+      send file:./a.png\uFF09\""
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 176.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: 2,1,1,1
+    label: Relative Gain
+    label1: Rx Spectrum
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: Rx Spectrum
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'True'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 656.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: 3,0,1,2
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: Rx Datas
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 416.0]
+    rotation: 180
+    state: enabled
+- name: uhd_usrp_sink_0
+  id: uhd_usrp_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    ant0: '"TX/RX"'
+    ant1: '"TX/RX"'
+    ant10: '"TX/RX"'
+    ant11: '"TX/RX"'
+    ant12: '"TX/RX"'
+    ant13: '"TX/RX"'
+    ant14: '"TX/RX"'
+    ant15: '"TX/RX"'
+    ant16: '"TX/RX"'
+    ant17: '"TX/RX"'
+    ant18: '"TX/RX"'
+    ant19: '"TX/RX"'
+    ant2: '"TX/RX"'
+    ant20: '"TX/RX"'
+    ant21: '"TX/RX"'
+    ant22: '"TX/RX"'
+    ant23: '"TX/RX"'
+    ant24: '"TX/RX"'
+    ant25: '"TX/RX"'
+    ant26: '"TX/RX"'
+    ant27: '"TX/RX"'
+    ant28: '"TX/RX"'
+    ant29: '"TX/RX"'
+    ant3: '"TX/RX"'
+    ant30: '"TX/RX"'
+    ant31: '"TX/RX"'
+    ant4: '"TX/RX"'
+    ant5: '"TX/RX"'
+    ant6: '"TX/RX"'
+    ant7: '"TX/RX"'
+    ant8: '"TX/RX"'
+    ant9: '"TX/RX"'
+    bw0: '0'
+    bw1: '0'
+    bw10: '0'
+    bw11: '0'
+    bw12: '0'
+    bw13: '0'
+    bw14: '0'
+    bw15: '0'
+    bw16: '0'
+    bw17: '0'
+    bw18: '0'
+    bw19: '0'
+    bw2: '0'
+    bw20: '0'
+    bw21: '0'
+    bw22: '0'
+    bw23: '0'
+    bw24: '0'
+    bw25: '0'
+    bw26: '0'
+    bw27: '0'
+    bw28: '0'
+    bw29: '0'
+    bw3: '0'
+    bw30: '0'
+    bw31: '0'
+    bw4: '0'
+    bw5: '0'
+    bw6: '0'
+    bw7: '0'
+    bw8: '0'
+    bw9: '0'
+    center_freq0: int(freq)
+    center_freq1: '0'
+    center_freq10: '0'
+    center_freq11: '0'
+    center_freq12: '0'
+    center_freq13: '0'
+    center_freq14: '0'
+    center_freq15: '0'
+    center_freq16: '0'
+    center_freq17: '0'
+    center_freq18: '0'
+    center_freq19: '0'
+    center_freq2: '0'
+    center_freq20: '0'
+    center_freq21: '0'
+    center_freq22: '0'
+    center_freq23: '0'
+    center_freq24: '0'
+    center_freq25: '0'
+    center_freq26: '0'
+    center_freq27: '0'
+    center_freq28: '0'
+    center_freq29: '0'
+    center_freq3: '0'
+    center_freq30: '0'
+    center_freq31: '0'
+    center_freq4: '0'
+    center_freq5: '0'
+    center_freq6: '0'
+    center_freq7: '0'
+    center_freq8: '0'
+    center_freq9: '0'
+    clock_rate: 0e0
+    clock_source0: ''
+    clock_source1: ''
+    clock_source2: ''
+    clock_source3: ''
+    clock_source4: ''
+    clock_source5: ''
+    clock_source6: ''
+    clock_source7: ''
+    comment: ''
+    dev_addr: '""'
+    dev_args: ''
+    gain0: uhd_gain
+    gain1: '0'
+    gain10: '0'
+    gain11: '0'
+    gain12: '0'
+    gain13: '0'
+    gain14: '0'
+    gain15: '0'
+    gain16: '0'
+    gain17: '0'
+    gain18: '0'
+    gain19: '0'
+    gain2: '0'
+    gain20: '0'
+    gain21: '0'
+    gain22: '0'
+    gain23: '0'
+    gain24: '0'
+    gain25: '0'
+    gain26: '0'
+    gain27: '0'
+    gain28: '0'
+    gain29: '0'
+    gain3: '0'
+    gain30: '0'
+    gain31: '0'
+    gain4: '0'
+    gain5: '0'
+    gain6: '0'
+    gain7: '0'
+    gain8: '0'
+    gain9: '0'
+    gain_type0: default
+    gain_type1: default
+    gain_type10: default
+    gain_type11: default
+    gain_type12: default
+    gain_type13: default
+    gain_type14: default
+    gain_type15: default
+    gain_type16: default
+    gain_type17: default
+    gain_type18: default
+    gain_type19: default
+    gain_type2: default
+    gain_type20: default
+    gain_type21: default
+    gain_type22: default
+    gain_type23: default
+    gain_type24: default
+    gain_type25: default
+    gain_type26: default
+    gain_type27: default
+    gain_type28: default
+    gain_type29: default
+    gain_type3: default
+    gain_type30: default
+    gain_type31: default
+    gain_type4: default
+    gain_type5: default
+    gain_type6: default
+    gain_type7: default
+    gain_type8: default
+    gain_type9: default
+    len_tag_name: '""'
+    lo_export0: 'False'
+    lo_export1: 'False'
+    lo_export10: 'False'
+    lo_export11: 'False'
+    lo_export12: 'False'
+    lo_export13: 'False'
+    lo_export14: 'False'
+    lo_export15: 'False'
+    lo_export16: 'False'
+    lo_export17: 'False'
+    lo_export18: 'False'
+    lo_export19: 'False'
+    lo_export2: 'False'
+    lo_export20: 'False'
+    lo_export21: 'False'
+    lo_export22: 'False'
+    lo_export23: 'False'
+    lo_export24: 'False'
+    lo_export25: 'False'
+    lo_export26: 'False'
+    lo_export27: 'False'
+    lo_export28: 'False'
+    lo_export29: 'False'
+    lo_export3: 'False'
+    lo_export30: 'False'
+    lo_export31: 'False'
+    lo_export4: 'False'
+    lo_export5: 'False'
+    lo_export6: 'False'
+    lo_export7: 'False'
+    lo_export8: 'False'
+    lo_export9: 'False'
+    lo_source0: internal
+    lo_source1: internal
+    lo_source10: internal
+    lo_source11: internal
+    lo_source12: internal
+    lo_source13: internal
+    lo_source14: internal
+    lo_source15: internal
+    lo_source16: internal
+    lo_source17: internal
+    lo_source18: internal
+    lo_source19: internal
+    lo_source2: internal
+    lo_source20: internal
+    lo_source21: internal
+    lo_source22: internal
+    lo_source23: internal
+    lo_source24: internal
+    lo_source25: internal
+    lo_source26: internal
+    lo_source27: internal
+    lo_source28: internal
+    lo_source29: internal
+    lo_source3: internal
+    lo_source30: internal
+    lo_source31: internal
+    lo_source4: internal
+    lo_source5: internal
+    lo_source6: internal
+    lo_source7: internal
+    lo_source8: internal
+    lo_source9: internal
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    num_mboards: '1'
+    otw: ''
+    samp_rate: samp_rate
+    sd_spec0: ''
+    sd_spec1: ''
+    sd_spec2: ''
+    sd_spec3: ''
+    sd_spec4: ''
+    sd_spec5: ''
+    sd_spec6: ''
+    sd_spec7: ''
+    show_lo_controls: 'False'
+    start_time: '-1.0'
+    stream_args: ''
+    stream_chans: '[]'
+    sync: none
+    time_source0: ''
+    time_source1: ''
+    time_source2: ''
+    time_source3: ''
+    time_source4: ''
+    time_source5: ''
+    time_source6: ''
+    time_source7: ''
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1232, 168.0]
+    rotation: 0
+    state: enabled
+- name: uhd_usrp_source_0_0
+  id: uhd_usrp_source
+  parameters:
+    affinity: ''
+    alias: ''
+    ant0: '"RX2"'
+    ant1: '"RX2"'
+    ant10: '"RX2"'
+    ant11: '"RX2"'
+    ant12: '"RX2"'
+    ant13: '"RX2"'
+    ant14: '"RX2"'
+    ant15: '"RX2"'
+    ant16: '"RX2"'
+    ant17: '"RX2"'
+    ant18: '"RX2"'
+    ant19: '"RX2"'
+    ant2: '"RX2"'
+    ant20: '"RX2"'
+    ant21: '"RX2"'
+    ant22: '"RX2"'
+    ant23: '"RX2"'
+    ant24: '"RX2"'
+    ant25: '"RX2"'
+    ant26: '"RX2"'
+    ant27: '"RX2"'
+    ant28: '"RX2"'
+    ant29: '"RX2"'
+    ant3: '"RX2"'
+    ant30: '"RX2"'
+    ant31: '"RX2"'
+    ant4: '"RX2"'
+    ant5: '"RX2"'
+    ant6: '"RX2"'
+    ant7: '"RX2"'
+    ant8: '"RX2"'
+    ant9: '"RX2"'
+    bw0: '0'
+    bw1: '0'
+    bw10: '0'
+    bw11: '0'
+    bw12: '0'
+    bw13: '0'
+    bw14: '0'
+    bw15: '0'
+    bw16: '0'
+    bw17: '0'
+    bw18: '0'
+    bw19: '0'
+    bw2: '0'
+    bw20: '0'
+    bw21: '0'
+    bw22: '0'
+    bw23: '0'
+    bw24: '0'
+    bw25: '0'
+    bw26: '0'
+    bw27: '0'
+    bw28: '0'
+    bw29: '0'
+    bw3: '0'
+    bw30: '0'
+    bw31: '0'
+    bw4: '0'
+    bw5: '0'
+    bw6: '0'
+    bw7: '0'
+    bw8: '0'
+    bw9: '0'
+    center_freq0: int(freq)
+    center_freq1: '0'
+    center_freq10: '0'
+    center_freq11: '0'
+    center_freq12: '0'
+    center_freq13: '0'
+    center_freq14: '0'
+    center_freq15: '0'
+    center_freq16: '0'
+    center_freq17: '0'
+    center_freq18: '0'
+    center_freq19: '0'
+    center_freq2: '0'
+    center_freq20: '0'
+    center_freq21: '0'
+    center_freq22: '0'
+    center_freq23: '0'
+    center_freq24: '0'
+    center_freq25: '0'
+    center_freq26: '0'
+    center_freq27: '0'
+    center_freq28: '0'
+    center_freq29: '0'
+    center_freq3: '0'
+    center_freq30: '0'
+    center_freq31: '0'
+    center_freq4: '0'
+    center_freq5: '0'
+    center_freq6: '0'
+    center_freq7: '0'
+    center_freq8: '0'
+    center_freq9: '0'
+    clock_rate: 0e0
+    clock_source0: ''
+    clock_source1: ''
+    clock_source2: ''
+    clock_source3: ''
+    clock_source4: ''
+    clock_source5: ''
+    clock_source6: ''
+    clock_source7: ''
+    comment: ''
+    dc_offs0: 0+0j
+    dc_offs1: 0+0j
+    dc_offs10: 0+0j
+    dc_offs11: 0+0j
+    dc_offs12: 0+0j
+    dc_offs13: 0+0j
+    dc_offs14: 0+0j
+    dc_offs15: 0+0j
+    dc_offs16: 0+0j
+    dc_offs17: 0+0j
+    dc_offs18: 0+0j
+    dc_offs19: 0+0j
+    dc_offs2: 0+0j
+    dc_offs20: 0+0j
+    dc_offs21: 0+0j
+    dc_offs22: 0+0j
+    dc_offs23: 0+0j
+    dc_offs24: 0+0j
+    dc_offs25: 0+0j
+    dc_offs26: 0+0j
+    dc_offs27: 0+0j
+    dc_offs28: 0+0j
+    dc_offs29: 0+0j
+    dc_offs3: 0+0j
+    dc_offs30: 0+0j
+    dc_offs31: 0+0j
+    dc_offs4: 0+0j
+    dc_offs5: 0+0j
+    dc_offs6: 0+0j
+    dc_offs7: 0+0j
+    dc_offs8: 0+0j
+    dc_offs9: 0+0j
+    dc_offs_enb0: default
+    dc_offs_enb1: default
+    dc_offs_enb10: default
+    dc_offs_enb11: default
+    dc_offs_enb12: default
+    dc_offs_enb13: default
+    dc_offs_enb14: default
+    dc_offs_enb15: default
+    dc_offs_enb16: default
+    dc_offs_enb17: default
+    dc_offs_enb18: default
+    dc_offs_enb19: default
+    dc_offs_enb2: default
+    dc_offs_enb20: default
+    dc_offs_enb21: default
+    dc_offs_enb22: default
+    dc_offs_enb23: default
+    dc_offs_enb24: default
+    dc_offs_enb25: default
+    dc_offs_enb26: default
+    dc_offs_enb27: default
+    dc_offs_enb28: default
+    dc_offs_enb29: default
+    dc_offs_enb3: default
+    dc_offs_enb30: default
+    dc_offs_enb31: default
+    dc_offs_enb4: default
+    dc_offs_enb5: default
+    dc_offs_enb6: default
+    dc_offs_enb7: default
+    dc_offs_enb8: default
+    dc_offs_enb9: default
+    dev_addr: '""'
+    dev_args: ''
+    gain0: uhd_gain
+    gain1: '0'
+    gain10: '0'
+    gain11: '0'
+    gain12: '0'
+    gain13: '0'
+    gain14: '0'
+    gain15: '0'
+    gain16: '0'
+    gain17: '0'
+    gain18: '0'
+    gain19: '0'
+    gain2: '0'
+    gain20: '0'
+    gain21: '0'
+    gain22: '0'
+    gain23: '0'
+    gain24: '0'
+    gain25: '0'
+    gain26: '0'
+    gain27: '0'
+    gain28: '0'
+    gain29: '0'
+    gain3: '0'
+    gain30: '0'
+    gain31: '0'
+    gain4: '0'
+    gain5: '0'
+    gain6: '0'
+    gain7: '0'
+    gain8: '0'
+    gain9: '0'
+    gain_type0: default
+    gain_type1: default
+    gain_type10: default
+    gain_type11: default
+    gain_type12: default
+    gain_type13: default
+    gain_type14: default
+    gain_type15: default
+    gain_type16: default
+    gain_type17: default
+    gain_type18: default
+    gain_type19: default
+    gain_type2: default
+    gain_type20: default
+    gain_type21: default
+    gain_type22: default
+    gain_type23: default
+    gain_type24: default
+    gain_type25: default
+    gain_type26: default
+    gain_type27: default
+    gain_type28: default
+    gain_type29: default
+    gain_type3: default
+    gain_type30: default
+    gain_type31: default
+    gain_type4: default
+    gain_type5: default
+    gain_type6: default
+    gain_type7: default
+    gain_type8: default
+    gain_type9: default
+    iq_imbal0: 0+0j
+    iq_imbal1: 0+0j
+    iq_imbal10: 0+0j
+    iq_imbal11: 0+0j
+    iq_imbal12: 0+0j
+    iq_imbal13: 0+0j
+    iq_imbal14: 0+0j
+    iq_imbal15: 0+0j
+    iq_imbal16: 0+0j
+    iq_imbal17: 0+0j
+    iq_imbal18: 0+0j
+    iq_imbal19: 0+0j
+    iq_imbal2: 0+0j
+    iq_imbal20: 0+0j
+    iq_imbal21: 0+0j
+    iq_imbal22: 0+0j
+    iq_imbal23: 0+0j
+    iq_imbal24: 0+0j
+    iq_imbal25: 0+0j
+    iq_imbal26: 0+0j
+    iq_imbal27: 0+0j
+    iq_imbal28: 0+0j
+    iq_imbal29: 0+0j
+    iq_imbal3: 0+0j
+    iq_imbal30: 0+0j
+    iq_imbal31: 0+0j
+    iq_imbal4: 0+0j
+    iq_imbal5: 0+0j
+    iq_imbal6: 0+0j
+    iq_imbal7: 0+0j
+    iq_imbal8: 0+0j
+    iq_imbal9: 0+0j
+    iq_imbal_enb0: default
+    iq_imbal_enb1: default
+    iq_imbal_enb10: default
+    iq_imbal_enb11: default
+    iq_imbal_enb12: default
+    iq_imbal_enb13: default
+    iq_imbal_enb14: default
+    iq_imbal_enb15: default
+    iq_imbal_enb16: default
+    iq_imbal_enb17: default
+    iq_imbal_enb18: default
+    iq_imbal_enb19: default
+    iq_imbal_enb2: default
+    iq_imbal_enb20: default
+    iq_imbal_enb21: default
+    iq_imbal_enb22: default
+    iq_imbal_enb23: default
+    iq_imbal_enb24: default
+    iq_imbal_enb25: default
+    iq_imbal_enb26: default
+    iq_imbal_enb27: default
+    iq_imbal_enb28: default
+    iq_imbal_enb29: default
+    iq_imbal_enb3: default
+    iq_imbal_enb30: default
+    iq_imbal_enb31: default
+    iq_imbal_enb4: default
+    iq_imbal_enb5: default
+    iq_imbal_enb6: default
+    iq_imbal_enb7: default
+    iq_imbal_enb8: default
+    iq_imbal_enb9: default
+    lo_export0: 'False'
+    lo_export1: 'False'
+    lo_export10: 'False'
+    lo_export11: 'False'
+    lo_export12: 'False'
+    lo_export13: 'False'
+    lo_export14: 'False'
+    lo_export15: 'False'
+    lo_export16: 'False'
+    lo_export17: 'False'
+    lo_export18: 'False'
+    lo_export19: 'False'
+    lo_export2: 'False'
+    lo_export20: 'False'
+    lo_export21: 'False'
+    lo_export22: 'False'
+    lo_export23: 'False'
+    lo_export24: 'False'
+    lo_export25: 'False'
+    lo_export26: 'False'
+    lo_export27: 'False'
+    lo_export28: 'False'
+    lo_export29: 'False'
+    lo_export3: 'False'
+    lo_export30: 'False'
+    lo_export31: 'False'
+    lo_export4: 'False'
+    lo_export5: 'False'
+    lo_export6: 'False'
+    lo_export7: 'False'
+    lo_export8: 'False'
+    lo_export9: 'False'
+    lo_source0: internal
+    lo_source1: internal
+    lo_source10: internal
+    lo_source11: internal
+    lo_source12: internal
+    lo_source13: internal
+    lo_source14: internal
+    lo_source15: internal
+    lo_source16: internal
+    lo_source17: internal
+    lo_source18: internal
+    lo_source19: internal
+    lo_source2: internal
+    lo_source20: internal
+    lo_source21: internal
+    lo_source22: internal
+    lo_source23: internal
+    lo_source24: internal
+    lo_source25: internal
+    lo_source26: internal
+    lo_source27: internal
+    lo_source28: internal
+    lo_source29: internal
+    lo_source3: internal
+    lo_source30: internal
+    lo_source31: internal
+    lo_source4: internal
+    lo_source5: internal
+    lo_source6: internal
+    lo_source7: internal
+    lo_source8: internal
+    lo_source9: internal
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    num_mboards: '1'
+    otw: ''
+    rx_agc0: Default
+    rx_agc1: Default
+    rx_agc10: Default
+    rx_agc11: Default
+    rx_agc12: Default
+    rx_agc13: Default
+    rx_agc14: Default
+    rx_agc15: Default
+    rx_agc16: Default
+    rx_agc17: Default
+    rx_agc18: Default
+    rx_agc19: Default
+    rx_agc2: Default
+    rx_agc20: Default
+    rx_agc21: Default
+    rx_agc22: Default
+    rx_agc23: Default
+    rx_agc24: Default
+    rx_agc25: Default
+    rx_agc26: Default
+    rx_agc27: Default
+    rx_agc28: Default
+    rx_agc29: Default
+    rx_agc3: Default
+    rx_agc30: Default
+    rx_agc31: Default
+    rx_agc4: Default
+    rx_agc5: Default
+    rx_agc6: Default
+    rx_agc7: Default
+    rx_agc8: Default
+    rx_agc9: Default
+    samp_rate: samp_rate
+    sd_spec0: ''
+    sd_spec1: ''
+    sd_spec2: ''
+    sd_spec3: ''
+    sd_spec4: ''
+    sd_spec5: ''
+    sd_spec6: ''
+    sd_spec7: ''
+    show_lo_controls: 'False'
+    start_time: '-1.0'
+    stream_args: ''
+    stream_chans: '[]'
+    sync: none
+    time_source0: ''
+    time_source1: ''
+    time_source2: ''
+    time_source3: ''
+    time_source4: ''
+    time_source5: ''
+    time_source6: ''
+    time_source7: ''
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 496.0]
+    rotation: 180
+    state: enabled
+
+connections:
+- [blocks_multiply_const_vxx_0, '0', blocks_tag_gate_0, '0']
+- [blocks_stream_to_tagged_stream_0, '0', digital_ofdm_tx_0, '0']
+- [blocks_tag_gate_0, '0', qtgui_const_sink_x_0, '0']
+- [blocks_tag_gate_0, '0', uhd_usrp_sink_0, '0']
+- [blocks_uchar_to_float_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_vector_source_x_0, '0', blocks_stream_to_tagged_stream_0, '0']
+- [digital_ofdm_rx_0, '0', blocks_tag_debug_0, '0']
+- [digital_ofdm_rx_0, '0', blocks_uchar_to_float_0, '0']
+- [digital_ofdm_rx_0, '0', epy_block_1, '0']
+- [digital_ofdm_tx_0, '0', blocks_multiply_const_vxx_0, '0']
+- [epy_block_0_0, '0', blocks_stream_to_tagged_stream_0, '0']
+- [epy_block_1, msg_out, blocks_msgpair_to_var_0, inpair]
+- [qtgui_edit_box_msg_0, msg, epy_block_0_0, msg_in]
+- [uhd_usrp_source_0_0, '0', digital_ofdm_rx_0, '0']
+- [uhd_usrp_source_0_0, '0', qtgui_freq_sink_x_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0
