@@ -2,7 +2,7 @@
 # 定义工具链根目录 
 TOOLCHAIN_PATH = $(CURDIR)/../toolchain/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf
 # 定义 libiio 路径 
-IIO_BASE = $(CURDIR)/../toolchain/libiio
+IIO_BASE = ../toolchain/libiio
 
 # 2. 拼接出具体的编译器和工具
 CC      = $(TOOLCHAIN_PATH)/bin/arm-linux-gnueabihf-gcc
