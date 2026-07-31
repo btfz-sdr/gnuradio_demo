@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 8.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0_0_0_0_0
@@ -58,13 +58,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 204.0]
+    coordinate: [8, 140.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0_0_0_0_0_0
@@ -80,13 +81,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 348.0]
+    coordinate: [8, 284.0]
     rotation: 0
     state: true
 - name: blocks_streams_to_vector_0
@@ -104,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 288.0]
+    coordinate: [256, 224.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_stream_0
@@ -122,7 +124,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [672, 304.0]
+    coordinate: [440, 240.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_streams_0
@@ -140,7 +142,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [640, 456.0]
+    coordinate: [408, 392.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0
@@ -237,7 +239,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [872, 276.0]
+    coordinate: [640, 204.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0_0
@@ -334,7 +336,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [872, 388.0]
+    coordinate: [640, 324.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0_0_0
@@ -431,7 +433,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [872, 500.0]
+    coordinate: [640, 436.0]
     rotation: 0
     state: true
 
@@ -446,4 +448,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

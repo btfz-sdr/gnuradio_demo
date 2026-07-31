@@ -51,7 +51,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 12.0]
+    coordinate: [248, 12.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -63,7 +63,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 8.0]
     rotation: 0
     state: enabled
 - name: FrequencyShifter_0
@@ -80,7 +80,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [832, 228.0]
+    coordinate: [344, 216.0]
     rotation: 0
     state: true
 - name: analog_noise_source_x_0
@@ -99,7 +99,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [392, 220.0]
+    coordinate: [8, 204.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -118,7 +118,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1080, 236.0]
+    coordinate: [528, 224.0]
     rotation: 0
     state: true
 - name: low_pass_filter_0
@@ -142,7 +142,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 188.0]
+    coordinate: [176, 180.0]
     rotation: 0
     state: true
 - name: qtgui_freq_sink_x_0
@@ -223,7 +223,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1256, 220.0]
+    coordinate: [672, 204.0]
     rotation: 0
     state: true
 
@@ -235,4 +235,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

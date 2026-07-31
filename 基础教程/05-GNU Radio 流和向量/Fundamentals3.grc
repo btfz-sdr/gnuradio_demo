@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [160, 8.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0_0_0_0_0
@@ -58,13 +58,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 204.0]
+    coordinate: [112, 188.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0_0_0_0_0_0
@@ -80,13 +81,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 348.0]
+    coordinate: [112, 332.0]
     rotation: 0
     state: true
 - name: blocks_streams_to_vector_0
@@ -104,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 296.0]
+    coordinate: [360, 280.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_stream_0
@@ -122,7 +124,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [624, 312.0]
+    coordinate: [544, 296.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0
@@ -219,7 +221,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 284.0]
+    coordinate: [712, 260.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0_0
@@ -316,7 +318,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 124.0]
+    coordinate: [360, 108.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0_0_0
@@ -413,7 +415,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 476.0]
+    coordinate: [360, 460.0]
     rotation: 0
     state: true
 
@@ -427,4 +429,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

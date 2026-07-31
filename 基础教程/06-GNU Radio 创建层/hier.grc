@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 8]
+    coordinate: [8, 12.0]
     rotation: 0
     state: enabled
 
@@ -46,13 +46,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 180.0]
+    coordinate: [16, 148.0]
     rotation: 0
     state: true
 - name: blocks_multiply_xx_0
@@ -70,7 +71,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [952, 224.0]
+    coordinate: [232, 200.0]
     rotation: 0
     state: true
 - name: frequency
@@ -87,7 +88,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 12.0]
+    coordinate: [280, 12.0]
     rotation: 0
     state: true
 - name: pad_sink_0
@@ -105,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1120, 236.0]
+    coordinate: [344, 208.0]
     rotation: 0
     state: true
 - name: pad_source_0
@@ -125,7 +126,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [760, 340.0]
+    coordinate: [80, 296.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -142,7 +143,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 12.0]
+    coordinate: [168, 12.0]
     rotation: 0
     state: true
 
@@ -153,4 +154,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

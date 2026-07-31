@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 8]
+    coordinate: [16, 12.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [168, 16.0]
     rotation: 0
     state: enabled
 - name: vectorLength
@@ -54,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 12.0]
+    coordinate: [256, 16.0]
     rotation: 0
     state: true
 - name: analog_noise_source_x_0
@@ -73,7 +73,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 460.0]
+    coordinate: [16, 284.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0
@@ -89,13 +89,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: float
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 268.0]
+    coordinate: [16, 132.0]
     rotation: 0
     state: true
 - name: blocks_stream_to_vector_0
@@ -113,7 +114,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [712, 312.0]
+    coordinate: [368, 184.0]
     rotation: 0
     state: true
 - name: blocks_stream_to_vector_0_0
@@ -131,7 +132,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [712, 480.0]
+    coordinate: [368, 312.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -150,7 +151,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 308.0]
+    coordinate: [224, 176.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_stream_0
@@ -168,7 +169,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 312.0]
+    coordinate: [688, 184.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_stream_0_0
@@ -186,7 +187,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 480.0]
+    coordinate: [688, 304.0]
     rotation: 0
     state: true
 - name: epy_block_0
@@ -226,7 +227,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 312.0]
+    coordinate: [528, 232.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -323,7 +324,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 308.0]
+    coordinate: [864, 180.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0
@@ -420,7 +421,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 476.0]
+    coordinate: [864, 300.0]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -433,7 +434,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 388.0]
+    coordinate: [224, 232.0]
     rotation: 0
     state: true
 - name: virtual_sink_0_0
@@ -446,7 +447,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 556.0]
+    coordinate: [216, 344.0]
     rotation: 0
     state: true
 - name: virtual_source_0
@@ -459,7 +460,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1112, 396.0]
+    coordinate: [696, 224.0]
     rotation: 0
     state: true
 - name: virtual_source_0_0
@@ -472,7 +473,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1112, 556.0]
+    coordinate: [688, 344.0]
     rotation: 0
     state: true
 
@@ -493,4 +494,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 8]
+    coordinate: [8, 4.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [160, 8.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0
@@ -58,13 +58,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 176.0]
+    coordinate: [8, 116.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0_0
@@ -80,13 +81,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 372.0]
+    coordinate: [8, 260.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -105,7 +107,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1000, 308.0]
+    coordinate: [432, 176.0]
     rotation: 0
     state: true
 - name: epy_block_0
@@ -142,7 +144,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [776, 296.0]
+    coordinate: [248, 168.0]
     rotation: 0
     state: true
 - name: qtgui_freq_sink_x_0
@@ -180,7 +182,7 @@ blocks:
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
-    gui_hint: ''
+    gui_hint: 1,1,1,1
     label: Relative Gain
     label1: ''
     label10: ''''''
@@ -195,7 +197,7 @@ blocks:
     legend: 'True'
     maxoutbuf: '0'
     minoutbuf: '0'
-    name: '""'
+    name: "\"\u8FD0\u7B97\u540E\""
     nconnections: '1'
     norm_window: 'False'
     showports: 'False'
@@ -223,7 +225,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1312, 436.0]
+    coordinate: [624, 204.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -257,7 +259,7 @@ blocks:
     ctrlpanel: 'False'
     entags: 'True'
     grid: 'False'
-    gui_hint: ''
+    gui_hint: 1,0,1,1
     label1: Signal 1
     label10: Signal 10
     label2: Signal 2
@@ -279,9 +281,9 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: '""'
+    name: "\"\u8FD0\u7B97\u540E\""
     nconnections: '1'
-    size: '1024'
+    size: '64'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -320,7 +322,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1312, 256.0]
+    coordinate: [624, 92.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0
@@ -354,12 +356,12 @@ blocks:
     ctrlpanel: 'False'
     entags: 'True'
     grid: 'False'
-    gui_hint: ''
-    label1: Signal 1
+    gui_hint: 0,0,1,2
+    label1: 1k
     label10: Signal 10
-    label2: Signal 2
-    label3: Signal 3
-    label4: Signal 4
+    label2: 1k
+    label3: 3k
+    label4: 3k
     label5: Signal 5
     label6: Signal 6
     label7: Signal 7
@@ -378,7 +380,7 @@ blocks:
     marker9: '-1'
     name: '""'
     nconnections: '2'
-    size: '1024'
+    size: '64'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -417,7 +419,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [784, 500.0]
+    coordinate: [248, 268.0]
     rotation: 0
     state: true
 
@@ -432,4 +434,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

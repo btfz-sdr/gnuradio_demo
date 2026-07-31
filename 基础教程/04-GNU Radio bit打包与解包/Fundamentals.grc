@@ -62,7 +62,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 268.0]
+    coordinate: [8, 156.0]
     rotation: 0
     state: true
 - name: blocks_char_to_float_0
@@ -79,7 +79,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [864, 372.0]
+    coordinate: [568, 184.0]
     rotation: 0
     state: true
 - name: blocks_char_to_float_0_0
@@ -96,7 +96,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [848, 212.0]
+    coordinate: [456, 88.0]
     rotation: 0
     state: true
 - name: blocks_char_to_float_0_0_0
@@ -113,7 +113,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 460.0]
+    coordinate: [168, 240.0]
     rotation: 0
     state: true
 - name: blocks_pack_k_bits_bb_0
@@ -129,7 +129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [560, 292.0]
+    coordinate: [304, 184.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -148,7 +148,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 292.0]
+    coordinate: [168, 184.0]
     rotation: 0
     state: true
 - name: blocks_unpack_k_bits_bb_0
@@ -164,7 +164,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [704, 372.0]
+    coordinate: [448, 184.0]
     rotation: 0
     state: true
 - name: qtgui_histogram_sink_x_0
@@ -198,7 +198,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     grid: 'False'
-    gui_hint: ''
+    gui_hint: 0,1,1,1
     label1: ''
     label10: ''
     label2: ''
@@ -220,7 +220,7 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: 1bit
+    name: "1bit \u6253\u5305\u518D\u89E3\u5305\u540E\u6570\u636E"
     nconnections: '1'
     size: '1024'
     style1: '1'
@@ -251,7 +251,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1032, 324.0]
+    coordinate: [768, 128.0]
     rotation: 0
     state: true
 - name: qtgui_histogram_sink_x_0_0
@@ -285,7 +285,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     grid: 'False'
-    gui_hint: ''
+    gui_hint: 0,0,1,1
     label1: ''
     label10: ''
     label2: ''
@@ -307,7 +307,7 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: 4bits
+    name: "4bits \u6253\u5305\u540E\u6570\u636E"
     nconnections: '1'
     size: '1024'
     style1: '1'
@@ -338,7 +338,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1032, 164.0]
+    coordinate: [624, 8.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -372,10 +372,10 @@ blocks:
     ctrlpanel: 'False'
     entags: 'True'
     grid: 'False'
-    gui_hint: ''
-    label1: Signal 1
+    gui_hint: 1,0,1,2
+    label1: pack->unpack
     label10: Signal 10
-    label2: Signal 2
+    label2: source
     label3: Signal 3
     label4: Signal 4
     label5: Signal 5
@@ -394,7 +394,8 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: '""'
+    name: "\"\u6253\u5305\u518D\u89E3\u5305\u4E0E\u539F\u59CB\u6570\u636E\u6BD4\u8F83\
+      \""
     nconnections: '2'
     size: '1024'
     srate: samp_rate
@@ -428,14 +429,14 @@ blocks:
     width8: '1'
     width9: '1'
     ylabel: Amplitude
-    ymax: '1'
-    ymin: '-1'
+    ymax: '1.5'
+    ymin: '-0.5'
     yunit: '""'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1032, 484.0]
+    coordinate: [768, 292.0]
     rotation: 0
     state: true
 
@@ -443,9 +444,9 @@ connections:
 - [analog_random_source_x_0, '0', blocks_char_to_float_0_0_0, '0']
 - [analog_random_source_x_0, '0', blocks_throttle_0, '0']
 - [blocks_char_to_float_0, '0', qtgui_histogram_sink_x_0, '0']
-- [blocks_char_to_float_0, '0', qtgui_time_sink_x_0, '1']
+- [blocks_char_to_float_0, '0', qtgui_time_sink_x_0, '0']
 - [blocks_char_to_float_0_0, '0', qtgui_histogram_sink_x_0_0, '0']
-- [blocks_char_to_float_0_0_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_char_to_float_0_0_0, '0', qtgui_time_sink_x_0, '1']
 - [blocks_pack_k_bits_bb_0, '0', blocks_char_to_float_0_0, '0']
 - [blocks_pack_k_bits_bb_0, '0', blocks_unpack_k_bits_bb_0, '0']
 - [blocks_throttle_0, '0', blocks_pack_k_bits_bb_0, '0']
@@ -453,4 +454,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [296, 12.0]
+    coordinate: [400, 16.0]
     rotation: 0
     state: disabled
 - name: frequency
@@ -63,9 +63,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 12.0]
+    coordinate: [488, 12.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: frequency
   id: variable_qtgui_chooser
   parameters:
@@ -93,9 +93,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [520, 12.0]
+    coordinate: [584, 8.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: samp_rate
   id: variable
   parameters:
@@ -105,7 +105,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 8.0]
     rotation: 0
     state: enabled
 - name: analog_random_source_x_0
@@ -127,7 +127,7 @@ blocks:
     bus_structure: null
     coordinate: [40, 452.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_random_source_x_0_0
   id: analog_random_source_x
   parameters:
@@ -147,7 +147,7 @@ blocks:
     bus_structure: null
     coordinate: [40, 604.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0
   id: analog_sig_source_x
   parameters:
@@ -161,13 +161,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [40, 252.0]
+    coordinate: [8, 220.0]
     rotation: 0
     state: true
 - name: blocks_char_to_float_0
@@ -186,7 +187,7 @@ blocks:
     bus_structure: null
     coordinate: [416, 476.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_char_to_float_0_0
   id: blocks_char_to_float
   parameters:
@@ -203,7 +204,7 @@ blocks:
     bus_structure: null
     coordinate: [704, 596.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_char_to_float_0_0_0
   id: blocks_char_to_float
   parameters:
@@ -220,7 +221,7 @@ blocks:
     bus_structure: null
     coordinate: [704, 692.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_char_to_float_0_0_0_0
   id: blocks_char_to_float
   parameters:
@@ -237,7 +238,7 @@ blocks:
     bus_structure: null
     coordinate: [704, 644.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_pack_k_bits_bb_0
   id: blocks_pack_k_bits_bb
   parameters:
@@ -253,7 +254,7 @@ blocks:
     bus_structure: null
     coordinate: [408, 596.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -270,7 +271,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 292.0]
+    coordinate: [216, 264.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0_0
@@ -291,7 +292,7 @@ blocks:
     bus_structure: null
     coordinate: [232, 476.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_throttle_0_0_0
   id: blocks_throttle
   parameters:
@@ -310,7 +311,7 @@ blocks:
     bus_structure: null
     coordinate: [232, 692.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_unpack_k_bits_bb_0
   id: blocks_unpack_k_bits_bb
   parameters:
@@ -326,7 +327,7 @@ blocks:
     bus_structure: null
     coordinate: [536, 644.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_freq_sink_x_0
   id: qtgui_freq_sink_x
   parameters:
@@ -405,7 +406,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 220.0]
+    coordinate: [440, 204.0]
     rotation: 0
     state: true
 - name: qtgui_histogram_sink_x_0_0
@@ -494,7 +495,7 @@ blocks:
     bus_structure: null
     coordinate: [912, 604.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
   parameters:
@@ -589,7 +590,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 340.0]
+    coordinate: [440, 300.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0_0
@@ -688,7 +689,7 @@ blocks:
     bus_structure: null
     coordinate: [584, 460.0]
     rotation: 0
-    state: true
+    state: disabled
 
 connections:
 - [analog_random_source_x_0, '0', blocks_throttle_0_0, '0']
@@ -709,4 +710,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

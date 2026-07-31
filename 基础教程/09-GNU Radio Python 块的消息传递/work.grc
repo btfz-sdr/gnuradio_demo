@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 8.0]
     rotation: 0
     state: enabled
 - name: analog_noise_source_x_0
@@ -61,7 +61,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [128, 220.0]
+    coordinate: [48, 116.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0
@@ -77,13 +77,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [104, 332.0]
+    coordinate: [24, 228.0]
     rotation: 0
     state: true
 - name: blocks_message_debug_0
@@ -93,11 +94,12 @@ blocks:
     alias: ''
     comment: ''
     en_uvec: 'True'
+    log_level: info
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [936, 416.0]
+    coordinate: [832, 304.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -116,7 +118,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [912, 300.0]
+    coordinate: [792, 192.0]
     rotation: 0
     state: true
 - name: epy_block_0
@@ -155,7 +157,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 288.0]
+    coordinate: [320, 184.0]
     rotation: 0
     state: true
 - name: epy_block_1
@@ -196,7 +198,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [560, 304.0]
+    coordinate: [480, 200.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -293,7 +295,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1144, 284.0]
+    coordinate: [968, 172.0]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -306,7 +308,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [912, 348.0]
+    coordinate: [832, 248.0]
     rotation: 0
     state: true
 - name: virtual_source_0
@@ -319,7 +321,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 468.0]
+    coordinate: [120, 376.0]
     rotation: 0
     state: true
 
@@ -335,4 +337,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0
