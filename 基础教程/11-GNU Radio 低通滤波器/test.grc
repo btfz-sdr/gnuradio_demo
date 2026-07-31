@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 8]
+    coordinate: [8, 12.0]
     rotation: 0
     state: enabled
 
@@ -51,7 +51,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [408, 52.0]
+    coordinate: [240, 12.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -63,7 +63,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 16.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_1
@@ -79,13 +79,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 276.0]
+    coordinate: [8, 164.0]
     rotation: 0
     state: true
 - name: qtgui_freq_sink_x_0
@@ -166,7 +167,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [672, 300.0]
+    coordinate: [240, 188.0]
     rotation: 0
     state: true
 
@@ -175,4 +176,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

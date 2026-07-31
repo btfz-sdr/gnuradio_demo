@@ -42,9 +42,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1304, 276.0]
+    coordinate: [880, 376.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: frequency
   id: variable_qtgui_range
   parameters:
@@ -63,7 +63,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [392, 12.0]
+    coordinate: [240, 12.0]
     rotation: 0
     state: disabled
 - name: frequency
@@ -84,7 +84,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 580.0]
+    coordinate: [208, 484.0]
     rotation: 0
     state: true
 - name: lowPassTaps
@@ -95,15 +95,16 @@ blocks:
     cutoff_freq: samp_rate/4
     gain: '1.0'
     samp_rate: samp_rate
+    value: ''
     width: samp_rate/8
     win: window.WIN_HAMMING
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1064, 348.0]
+    coordinate: [728, 380.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
@@ -113,7 +114,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 8.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0
@@ -129,13 +130,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [144, 180.0]
+    coordinate: [8, 180.0]
     rotation: 0
     state: disabled
 - name: analog_sig_source_x_1
@@ -151,13 +153,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: complex
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [144, 420.0]
+    coordinate: [8, 340.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -176,7 +179,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [592, 220.0]
+    coordinate: [360, 224.0]
     rotation: 0
     state: disabled
 - name: blocks_throttle_1
@@ -195,7 +198,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [608, 460.0]
+    coordinate: [424, 400.0]
     rotation: 0
     state: true
 - name: freq_xlating_fir_filter_xxx_0
@@ -209,13 +212,13 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     samp_rate: samp_rate
-    taps: boxcarFilter
+    taps: lowPassTaps
     type: ccc
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 452.0]
+    coordinate: [208, 372.0]
     rotation: 0
     state: true
 - name: import_0
@@ -228,7 +231,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1304, 228.0]
+    coordinate: [880, 320.0]
     rotation: 0
     state: true
 - name: low_pass_filter_0
@@ -252,7 +255,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [392, 172.0]
+    coordinate: [200, 180.0]
     rotation: 0
     state: disabled
 - name: qtgui_freq_sink_x_0
@@ -333,7 +336,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 204.0]
+    coordinate: [512, 204.0]
     rotation: 0
     state: disabled
 - name: qtgui_freq_sink_x_1
@@ -414,7 +417,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 444.0]
+    coordinate: [576, 380.0]
     rotation: 0
     state: true
 
@@ -428,4 +431,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0

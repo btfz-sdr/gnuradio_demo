@@ -43,13 +43,14 @@ blocks:
     low_cutoff_freq: '-3000'
     samp_rate: samp_rate
     type: complex_band_pass
+    value: ''
     width: '200'
     win: window.WIN_HAMMING
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 12.0]
+    coordinate: [320, 16.0]
     rotation: 0
     state: true
 - name: rf_decim
@@ -61,7 +62,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [296, 12.0]
+    coordinate: [240, 16.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -73,7 +74,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [152, 16.0]
     rotation: 0
     state: enabled
 - name: sq_lvl
@@ -94,7 +95,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [568, 12.0]
+    coordinate: [464, 12.0]
     rotation: 0
     state: true
 - name: volume
@@ -115,7 +116,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 12.0]
+    coordinate: [568, 12.0]
     rotation: 0
     state: true
 - name: analog_nbfm_rx_0
@@ -134,7 +135,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 260.0]
+    coordinate: [608, 244.0]
     rotation: 0
     state: true
 - name: analog_simple_squelch_cc_0
@@ -151,7 +152,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [608, 276.0]
+    coordinate: [440, 264.0]
     rotation: 0
     state: true
 - name: audio_sink_0
@@ -168,7 +169,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1208, 276.0]
+    coordinate: [952, 264.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_vxx_0
@@ -186,7 +187,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1024, 284.0]
+    coordinate: [800, 272.0]
     rotation: 0
     state: true
 - name: fft_filter_xxx_0
@@ -208,7 +209,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [408, 268.0]
+    coordinate: [256, 252.0]
     rotation: 0
     state: true
 - name: qtgui_waterfall_sink_x_0
@@ -269,7 +270,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [408, 404.0]
+    coordinate: [256, 412.0]
     rotation: 0
     state: true
 - name: zeromq_sub_source_0
@@ -278,6 +279,7 @@ blocks:
     address: tcp://127.0.0.1:49203
     affinity: ''
     alias: ''
+    bind: 'False'
     comment: ''
     hwm: '-1'
     key: ''
@@ -291,7 +293,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [160, 260.0]
+    coordinate: [8, 236.0]
     rotation: 0
     state: true
 
@@ -305,4 +307,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.2.0
+  grc_version: 3.10.12.0
