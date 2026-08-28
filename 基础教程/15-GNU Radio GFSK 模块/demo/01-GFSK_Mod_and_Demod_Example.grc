@@ -51,7 +51,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 20.0]
+    coordinate: [248, 12.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -63,7 +63,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 12.0]
+    coordinate: [160, 8.0]
     rotation: 0
     state: enabled
 - name: blocks_delay_0
@@ -76,13 +76,14 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
+    showports: 'False'
     type: float
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1048, 384.0]
+    coordinate: [1040, 384.0]
     rotation: 0
     state: true
 - name: blocks_pack_k_bits_bb_0
@@ -98,7 +99,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 324.0]
+    coordinate: [864, 320.0]
     rotation: 0
     state: true
 - name: blocks_repack_bits_bb_0
@@ -118,7 +119,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [872, 188.0]
+    coordinate: [864, 192.0]
     rotation: 0
     state: true
 - name: blocks_stream_to_tagged_stream_0
@@ -137,7 +138,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [248, 256.0]
+    coordinate: [208, 256.0]
     rotation: 0
     state: true
 - name: blocks_uchar_to_float_0
@@ -152,7 +153,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1080, 200.0]
+    coordinate: [1040, 208.0]
     rotation: 0
     state: true
 - name: blocks_uchar_to_float_1
@@ -167,7 +168,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1032, 328.0]
+    coordinate: [1040, 328.0]
     rotation: 0
     state: true
 - name: blocks_uchar_to_float_2
@@ -182,7 +183,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 384.0]
+    coordinate: [448, 376.0]
     rotation: 0
     state: true
 - name: blocks_vector_source_x_0
@@ -202,7 +203,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 248.0]
+    coordinate: [16, 244.0]
     rotation: 0
     state: true
 - name: digital_gfsk_demod_0
@@ -225,7 +226,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [640, 224.0]
+    coordinate: [616, 220.0]
     rotation: 0
     state: true
 - name: digital_gfsk_mod_0
@@ -246,7 +247,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [472, 248.0]
+    coordinate: [440, 244.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -343,7 +344,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 304.0]
+    coordinate: [1232, 296.0]
     rotation: 0
     state: true
 
@@ -363,4 +364,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.8.0
+  grc_version: 3.10.12.0

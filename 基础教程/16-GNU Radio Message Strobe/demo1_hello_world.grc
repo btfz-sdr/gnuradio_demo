@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [160, 8.0]
     rotation: 0
     state: enabled
 - name: blocks_message_debug_0
@@ -52,11 +52,12 @@ blocks:
     alias: ''
     comment: ''
     en_uvec: 'True'
+    log_level: info
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 384.0]
+    coordinate: [736, 224.0]
     rotation: 0
     state: enabled
 - name: blocks_message_strobe_0
@@ -73,7 +74,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 260.0]
+    coordinate: [56, 240.0]
     rotation: 0
     state: enabled
 - name: blocks_null_sink_0
@@ -90,7 +91,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [608, 144.0]
+    coordinate: [440, 80.0]
     rotation: 0
     state: enabled
 - name: blocks_null_source_0
@@ -109,7 +110,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 144.0]
+    coordinate: [160, 80.0]
     rotation: 0
     state: enabled
 - name: blocks_throttle_0
@@ -128,7 +129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [432, 140.0]
+    coordinate: [288, 72.0]
     rotation: 0
     state: enabled
 - name: note_0
@@ -141,7 +142,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 212.0]
+    coordinate: [56, 184.0]
     rotation: 0
     state: true
 - name: zeromq_pub_msg_sink_0
@@ -157,7 +158,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [480, 260.0]
+    coordinate: [280, 240.0]
     rotation: 0
     state: enabled
 - name: zeromq_sub_msg_source_0
@@ -175,7 +176,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 372.0]
+    coordinate: [464, 240.0]
     rotation: 0
     state: enabled
 
@@ -187,4 +188,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.8.0
+  grc_version: 3.10.12.0
