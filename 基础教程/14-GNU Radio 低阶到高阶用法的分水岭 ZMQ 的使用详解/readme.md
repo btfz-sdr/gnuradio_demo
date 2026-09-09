@@ -112,63 +112,83 @@ ZMQ stream blocks 具有传递标记的选项。此外，PUB/SUB块支持过滤�
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-# zmq_REQ_REP_server.py
-
-# This server program capitalizes received strings and returns them.
-# NOTES:
-#   1) To comply with the GNU Radio view, messages are received on the REQ socket and sent on the REP socket.
-#   2) The REQ and REP messages must be on separate port numbers.
-
 import pmt
 import zmq
 
-_debug = 0          # set to zero to turn off diagnostics
+context = zmq.Context()
 
-# create a REQ socket
-_PROTOCOL = "tcp://"
-_SERVER = "127.0.0.1"          # localhost
-_REQ_PORT = ":50246"
-_REQ_ADDR = _PROTOCOL + _SERVER + _REQ_PORT
-if (_debug):
-    print ("'zmq_REQ_REP_server' version 20056.1 connecting to:", _REQ_ADDR)
-req_context = zmq.Context()
-if (_debug):
-    assert (req_context)
-req_sock = req_context.socket (zmq.REQ)
-if (_debug):
-    assert (req_sock)
-rc = req_sock.connect (_REQ_ADDR)
-if (_debug):
-    assert (rc == None)
+# 1. REP 套接字：监听来自 zmq_req.py (REQ 客户端) 的请求
+rep_sock = context.socket(zmq.REP)
+rep_sock.bind("tcp://127.0.0.1:50247")
+print(f"REP listening on tcp://127.0.0.1:50247 (for zmq_req.py)")
 
-# create a REP socket
-_PROTOCOL = "tcp://"
-_SERVER = "127.0.0.1"          # localhost
-_REP_PORT = ":50247"
-_REP_ADDR = _PROTOCOL + _SERVER + _REP_PORT
-if (_debug):
-    print ("'zmq_REQ_REP_server' version 20056.1 binding to:", _REP_ADDR)
-rep_context = zmq.Context()
-if (_debug):
-    assert (rep_context)
-rep_sock = rep_context.socket (zmq.REP)
-if (_debug):
-    assert (rep_sock)
-rc = rep_sock.bind (_REP_ADDR)
-if (_debug):
-    assert (rc == None)
+# 2. REQ 套接字：连接到 zmq_rep.py (REP 服务器)
+req_sock = context.socket(zmq.REQ)
+req_sock.connect("tcp://127.0.0.1:50246")
+print(f"REQ connected to tcp://127.0.0.1:50246 (zmq_rep.py)")
+print("=" * 60)
+
+# 注册 req_sock 以等待 zmq_rep.py 的回复
+poller = zmq.Poller()
+poller.register(req_sock, zmq.POLLIN)
 
 while True:
-    #  Wait for next request from client
-    data = req_sock.recv()
-    message = pmt.to_python(pmt.deserialize_str(data))
-    print("Received request: %s" % message)
+    try:
+        # 1. 阻塞等待 zmq_req.py 发送请求
+        request_data = rep_sock.recv()
+        
+        # 2. 将请求透传发送给 zmq_rep.py
+        req_sock.send(request_data)
+        
+        # 3. 等待 zmq_rep.py 的响应（带 5 秒超时）
+        socks = dict(poller.poll(5000))
+        
+        if req_sock in socks and socks[req_sock] == zmq.POLLIN:
+            resp_bytes = req_sock.recv()
+            
+            # 解析 zmq_rep.py 返回的数据 (PMT 格式)
+            try:
+                p_val = pmt.deserialize_str(resp_bytes)
+                if pmt.is_symbol(p_val):
+                    val_str = pmt.symbol_to_string(p_val)
+                elif pmt.is_string(p_val):
+                    val_str = pmt.string_to_python_string(p_val)
+                else:
+                    val_str = str(pmt.to_python(p_val))
+                
+                # 将 "TEST" 转换为小写 "test"
+                converted_str = val_str.lower()
+                print(f"[Server] Converted: {val_str} -> {converted_str}")
+                
+                # 重新打包为 PMT Symbol 并序列化
+                reply_bytes = pmt.serialize_str(pmt.intern(converted_str))
+            except Exception as e:
+                print(f"[Error] Failed to parse/convert PMT: {e}")
+                reply_bytes = resp_bytes
+            
+            # 4. 回复给 zmq_req.py
+            rep_sock.send(reply_bytes)
+        else:
+            print("[WARNING] Timeout waiting for zmq_rep.py")
+            # 超时重置 REQ socket 以恢复状态
+            req_sock.close()
+            req_sock = context.socket(zmq.REQ)
+            req_sock.connect("tcp://127.0.0.1:50246")
+            poller.register(req_sock, zmq.POLLIN)
+            
+            err_pmt = pmt.serialize_str(pmt.intern("error"))
+            rep_sock.send(err_pmt)
 
-    output = message.upper()
+    except KeyboardInterrupt:
+        break
+    except Exception as e:
+        print(f"[Error] {e}")
+        import traceback
+        traceback.print_exc()
 
-    #  Send reply back to client
-    rep_sock.send (pmt.serialize_str(pmt.to_pmt(output)))
+print("Shutting down...")
 ```
+
 </br>
 
 安装 NetCat：方便我们测试 TCP 
@@ -307,21 +327,21 @@ while True:
 
 ### 参考链接
 
-[[1]. GNU Radio 系列教程（一） —— 什么是 GNU Radio][#1]
-[[2]. GNU Radio 系列教程（二） —— 绘制第一个信号分析流程图][#2]
-[[3]. GNU Radio 系列教程（三） —— 变量的使用][#3] 
-[[4]. GNU Radio 系列教程（四） —— 比特的打包与解包][#4]
-[[5]. GNU Radio 系列教程（五） —— 流和向量][#5]
-[[6]. GNU Radio 系列教程（六） —— 基于层创建自己的块][#6]
-[[7]. GNU Radio 系列教程（七）—— 创建第一个块][#7]
-[[8]. GNU Radio 系列教程（八）—— 创建能处理向量的 Python 块][#8]
-[[9]. GNU Radio 系列教程（九）—— Python 块的消息传递][#9]
-[[10]. GNU Radio 系列教程（十）—— Python 块的 Tags][#10]
-[[11]. GNU Radio 系列教程（十一）—— 低通滤波器][#11]
-[[12]. GNU Radio 系列教程（十二）—— 窄带 FM 收发系统（基于ZMQ模拟射频发送）][#12]
-[[13]. GNU Radio 系列教程（十三）—— 用两个 HackRF 实现 FM 收发][#13]
-[[14]. SDR 教程实战 —— 利用 GNU Radio + HackRF 做 FM 收音机][#X1]
-[[15]. SDR 教程实战 —— 利用 GNU Radio + HackRF 做蓝牙定频测试工具（超低成本）][#X2]
+[[1]. GNU Radio 系列教程（一） —— 什么是 GNU Radio][#1]    
+[[2]. GNU Radio 系列教程（二） —— 绘制第一个信号分析流程图][#2]    
+[[3]. GNU Radio 系列教程（三） —— 变量的使用][#3]     
+[[4]. GNU Radio 系列教程（四） —— 比特的打包与解包][#4]    
+[[5]. GNU Radio 系列教程（五） —— 流和向量][#5]    
+[[6]. GNU Radio 系列教程（六） —— 基于层创建自己的块][#6]    
+[[7]. GNU Radio 系列教程（七）—— 创建第一个块][#7]     
+[[8]. GNU Radio 系列教程（八）—— 创建能处理向量的 Python 块][#8]    
+[[9]. GNU Radio 系列教程（九）—— Python 块的消息传递][#9]     
+[[10]. GNU Radio 系列教程（十）—— Python 块的 Tags][#10]     
+[[11]. GNU Radio 系列教程（十一）—— 低通滤波器][#11]     
+[[12]. GNU Radio 系列教程（十二）—— 窄带 FM 收发系统（基于ZMQ模拟射频发送）][#12]     
+[[13]. GNU Radio 系列教程（十三）—— 用两个 HackRF 实现 FM 收发][#13]    
+[[14]. SDR 教程实战 —— 利用 GNU Radio + HackRF 做 FM 收音机][#X1]     
+[[15]. SDR 教程实战 —— 利用 GNU Radio + HackRF 做蓝牙定频测试工具（超低成本）][#X2]     
 </br>
 
 
