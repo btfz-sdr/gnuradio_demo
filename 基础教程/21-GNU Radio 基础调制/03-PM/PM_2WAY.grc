@@ -91,7 +91,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 532.0]
+    coordinate: [248, 560.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0
@@ -107,13 +107,14 @@ blocks:
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
+    showports: 'False'
     type: float
     waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [40, 196.0]
+    coordinate: [16, 188.0]
     rotation: 0
     state: true
 - name: blocks_float_to_complex_0
@@ -129,7 +130,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 232.0]
+    coordinate: [696, 224.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_vxx_0
@@ -148,7 +149,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [248, 236.0]
+    coordinate: [240, 232.0]
     rotation: 0
     state: true
 - name: blocks_throttle2_0
@@ -169,7 +170,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 236.0]
+    coordinate: [872, 224.0]
     rotation: 0
     state: true
 - name: blocks_transcendental_0
@@ -186,7 +187,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 276.0]
+    coordinate: [488, 280.0]
     rotation: 0
     state: true
 - name: blocks_transcendental_0_0
@@ -203,7 +204,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 212.0]
+    coordinate: [488, 192.0]
     rotation: 0
     state: true
 - name: note_0
@@ -258,7 +259,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 212.0]
+    coordinate: [1048, 196.0]
     rotation: 0
     state: true
 - name: qtgui_sink_x_0_0
@@ -287,7 +288,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 500.0]
+    coordinate: [1040, 524.0]
     rotation: 0
     state: true
 
@@ -304,4 +305,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.9.2
+  grc_version: 3.10.12.0
