@@ -40,6 +40,7 @@ blocks:
     const_points: digital.psk_2()[0]
     dims: '1'
     normalization: digital.constellation.AMPLITUDE_NORMALIZATION
+    npwr: '1.0'
     precision: '8'
     rot_sym: '2'
     soft_dec_lut: '''auto'''
@@ -49,7 +50,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 724.0]
+    coordinate: [1056, 744.0]
     rotation: 0
     state: enabled
 - name: Const_PLD
@@ -59,6 +60,7 @@ blocks:
     const_points: digital.psk_4()[0]
     dims: '1'
     normalization: digital.constellation.AMPLITUDE_NORMALIZATION
+    npwr: '1.0'
     precision: '8'
     rot_sym: '4'
     soft_dec_lut: '''auto'''
@@ -68,7 +70,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1536, 724.0]
+    coordinate: [1512, 744.0]
     rotation: 0
     state: disabled
 - name: Const_PLD
@@ -78,6 +80,7 @@ blocks:
     const_points: digital.psk_2()[0]
     dims: '1'
     normalization: digital.constellation.AMPLITUDE_NORMALIZATION
+    npwr: '1.0'
     precision: '8'
     rot_sym: '2'
     soft_dec_lut: '''auto'''
@@ -87,7 +90,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 724.0]
+    coordinate: [1280, 744.0]
     rotation: 0
     state: enabled
 - name: amp
@@ -108,7 +111,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 660.0]
+    coordinate: [216, 652.0]
     rotation: 0
     state: enabled
 - name: dec
@@ -228,7 +231,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [152, 75]
+    coordinate: [136, 80.0]
     rotation: 0
     state: enabled
 - name: enc
@@ -352,7 +355,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [840, 12.0]
+    coordinate: [832, 12.0]
     rotation: 0
     state: enabled
 - name: hdr_format
@@ -395,7 +398,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1464, 108.0]
+    coordinate: [1464, 120.0]
     rotation: 0
     state: enabled
 - name: k
@@ -419,7 +422,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [80, 75]
+    coordinate: [72, 80.0]
     rotation: 0
     state: enabled
 - name: noise
@@ -488,11 +491,12 @@ blocks:
     ntaps: 11*sps*nfilts
     samp_rate: nfilts*sps
     sym_rate: '1.0'
+    value: ''
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1192, 596.0]
+    coordinate: [1176, 596.0]
     rotation: 0
     state: enabled
 - name: sps
@@ -504,7 +508,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 75]
+    coordinate: [8, 80.0]
     rotation: 0
     state: enabled
 - name: time_offset
@@ -525,7 +529,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [960, 12.0]
+    coordinate: [936, 12.0]
     rotation: 0
     state: enabled
 - name: tx_rrc_taps
@@ -537,6 +541,7 @@ blocks:
     ntaps: 5*sps*nfilts
     samp_rate: nfilts
     sym_rate: '1.0'
+    value: ''
   states:
     bus_sink: false
     bus_source: false
@@ -559,7 +564,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 500.0]
+    coordinate: [880, 484.0]
     rotation: 0
     state: enabled
 - name: blocks_message_debug_0_0_0
@@ -569,11 +574,12 @@ blocks:
     alias: ''
     comment: ''
     en_uvec: 'True'
+    log_level: info
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 408.0]
+    coordinate: [696, 376.0]
     rotation: 0
     state: disabled
 - name: blocks_message_debug_0_0_0_0
@@ -583,11 +589,12 @@ blocks:
     alias: ''
     comment: ''
     en_uvec: 'True'
+    log_level: info
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 72.0]
+    coordinate: [552, 48.0]
     rotation: 0
     state: disabled
 - name: blocks_message_strobe_0
@@ -622,7 +629,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 612.0]
+    coordinate: [216, 600.0]
     rotation: 0
     state: enabled
 - name: chan_data
@@ -635,7 +642,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 180.0]
+    coordinate: [1096, 192.0]
     rotation: 0
     state: enabled
 - name: channels_channel_model_0
@@ -656,7 +663,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [832, 148.0]
+    coordinate: [824, 156.0]
     rotation: 0
     state: enabled
 - name: epy_block_0
@@ -746,7 +753,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 520.0]
+    coordinate: [376, 512.0]
     rotation: 0
     state: enabled
 - name: packet_tx_0
@@ -768,7 +775,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 180.0]
+    coordinate: [528, 184.0]
     rotation: 0
     state: enabled
 - name: pdu_pdu_to_stream_x_0
@@ -786,7 +793,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 516.0]
+    coordinate: [696, 504.0]
     rotation: 0
     state: enabled
 - name: pdu_random_pdu_0
@@ -897,7 +904,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 404.0]
+    coordinate: [1096, 440.0]
     rotation: 0
     state: enabled
 - name: qtgui_const_sink_x_0_0_0
@@ -989,7 +996,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 820.0]
+    coordinate: [696, 800.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0
@@ -1070,7 +1077,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 304.0]
+    coordinate: [1096, 336.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0_0
@@ -1151,7 +1158,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 720.0]
+    coordinate: [696, 712.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -1248,7 +1255,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 260.0]
+    coordinate: [800, 284.0]
     rotation: 0
     state: disabled
 - name: qtgui_time_sink_x_1
@@ -1345,7 +1352,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 228.0]
+    coordinate: [1096, 244.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_1_0_0_0
@@ -1442,7 +1449,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 564.0]
+    coordinate: [696, 548.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_1_0_0_1
@@ -1539,7 +1546,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 644.0]
+    coordinate: [696, 628.0]
     rotation: 0
     state: enabled
 - name: tab0
@@ -1573,7 +1580,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1256, 228.0]
+    coordinate: [1232, 188.0]
     rotation: 0
     state: enabled
 - name: tab1
@@ -1607,7 +1614,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [848, 644.0]
+    coordinate: [880, 580.0]
     rotation: 0
     state: enabled
 - name: virtual_source_0
@@ -1620,7 +1627,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [24, 612.0]
+    coordinate: [24, 600.0]
     rotation: 0
     state: enabled
 
@@ -1641,11 +1648,11 @@ connections:
 - [packet_rx_0, pkt out, blocks_message_debug_0_0_0, print]
 - [packet_rx_0, pkt out, pdu_pdu_to_stream_x_0, pdus]
 - [packet_tx_0, '0', channels_channel_model_0, '0']
-- [packet_tx_0, '2', qtgui_time_sink_x_0, '0']
+- [packet_tx_0, '1', qtgui_time_sink_x_0, '0']
 - [pdu_pdu_to_stream_x_0, '0', blocks_file_sink_0, '0']
 - [pdu_random_pdu_0, pdus, packet_tx_0, in]
 - [virtual_source_0, '0', blocks_multiply_const_vxx_0, '0']
 
 metadata:
   file_format: 1
-  grc_version: 3.10.9.2
+  grc_version: 3.10.12.0

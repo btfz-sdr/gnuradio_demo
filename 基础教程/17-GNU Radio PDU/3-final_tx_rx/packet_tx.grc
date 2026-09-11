@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 788.0]
+    coordinate: [32, 764.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 556.0]
+    coordinate: [488, 544.0]
     rotation: 0
     state: enabled
 - name: nfilts
@@ -54,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 428.0]
+    coordinate: [488, 416.0]
     rotation: 0
     state: enabled
 - name: taps_per_filt
@@ -66,7 +66,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 492.0]
+    coordinate: [488, 480.0]
     rotation: 0
     state: enabled
 - name: blocks_repack_bits_bb_0
@@ -86,7 +86,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 172.0]
+    coordinate: [824, 168.0]
     rotation: 0
     state: enabled
 - name: blocks_repack_bits_bb_0_0
@@ -106,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 244.0]
+    coordinate: [824, 240.0]
     rotation: 0
     state: enabled
 - name: blocks_tagged_stream_multiply_length_0
@@ -133,7 +133,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1008, 656.0]
+    coordinate: [1008, 664.0]
     rotation: 0
     state: enabled
 - name: blocks_tagged_stream_mux_0
@@ -230,7 +230,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [312, 107]
+    coordinate: [312, 96.0]
     rotation: 180
     state: enabled
 - name: digital_map_bb_1
@@ -246,7 +246,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 180.0]
+    coordinate: [1016, 176.0]
     rotation: 0
     state: enabled
 - name: digital_map_bb_1_0
@@ -262,7 +262,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 252.0]
+    coordinate: [1016, 248.0]
     rotation: 0
     state: enabled
 - name: digital_protocol_formatter_async_0
@@ -278,7 +278,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 225]
+    coordinate: [56, 232.0]
     rotation: 0
     state: enabled
 - name: fec_async_encoder_0
@@ -299,7 +299,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 99]
+    coordinate: [64, 88.0]
     rotation: 180
     state: enabled
 - name: fec_async_encoder_0_0
@@ -319,7 +319,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [352, 172.0]
+    coordinate: [352, 168.0]
     rotation: 0
     state: enabled
 - name: hdr_const
@@ -337,7 +337,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 92.0]
+    coordinate: [824, 76.0]
     rotation: 0
     state: enabled
 - name: hdr_enc
@@ -372,7 +372,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 316.0]
+    coordinate: [56, 324.0]
     rotation: 0
     state: enabled
 - name: mod_header
@@ -442,7 +442,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 668.0]
+    coordinate: [1280, 672.0]
     rotation: 0
     state: enabled
 - name: pad_sink_1
@@ -460,7 +460,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 180.0]
+    coordinate: [56, 176.0]
     rotation: 180
     state: enabled
 - name: pad_sink_2
@@ -517,7 +517,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [504, 107]
+    coordinate: [504, 96.0]
     rotation: 180
     state: enabled
 - name: pdu_pdu_to_tagged_stream_0
@@ -534,7 +534,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 252.0]
+    coordinate: [600, 248.0]
     rotation: 0
     state: enabled
 - name: pdu_pdu_to_tagged_stream_0_0
@@ -551,7 +551,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 180.0]
+    coordinate: [600, 176.0]
     rotation: 0
     state: enabled
 - name: pfb_arb_resampler_xxx_0
@@ -607,7 +607,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 20.0]
+    coordinate: [64, 4.0]
     rotation: 0
     state: enabled
 - name: psf_taps
@@ -624,7 +624,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [560, 412.0]
+    coordinate: [584, 420.0]
     rotation: 0
     state: enabled
 - name: rx_mod_header
@@ -637,7 +637,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 612.0]
+    coordinate: [32, 616.0]
     rotation: 0
     state: enabled
 - name: rx_mod_payload
@@ -650,7 +650,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 668.0]
+    coordinate: [32, 680.0]
     rotation: 0
     state: enabled
 - name: sps
@@ -667,7 +667,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [744, 532.0]
+    coordinate: [744, 516.0]
     rotation: 0
     state: enabled
 
@@ -698,4 +698,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.9.2
+  grc_version: 3.10.12.0
