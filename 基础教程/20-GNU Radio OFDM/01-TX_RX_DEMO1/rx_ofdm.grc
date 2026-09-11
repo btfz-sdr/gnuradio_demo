@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [624, 228.0]
+    coordinate: [592, 88.0]
     rotation: 0
     state: enabled
 - name: occupied_carriers
@@ -55,7 +55,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 148.0]
+    coordinate: [328, 16.0]
     rotation: 0
     state: enabled
 - name: output_file_name
@@ -67,7 +67,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [760, 244.0]
+    coordinate: [744, 96.0]
     rotation: 0
     state: enabled
 - name: pilot_carriers
@@ -79,7 +79,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [480, 148.0]
+    coordinate: [472, 16.0]
     rotation: 0
     state: enabled
 - name: pilot_symbols
@@ -91,7 +91,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 148.0]
+    coordinate: [592, 16.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -103,7 +103,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 4.0]
+    coordinate: [160, 8.0]
     rotation: 0
     state: enabled
 - name: sync_word1
@@ -120,7 +120,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 228.0]
+    coordinate: [328, 88.0]
     rotation: 0
     state: enabled
 - name: sync_word2
@@ -134,7 +134,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [472, 228.0]
+    coordinate: [456, 88.0]
     rotation: 0
     state: enabled
 - name: blocks_file_sink_0
@@ -152,7 +152,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [760, 308.0]
+    coordinate: [744, 164.0]
     rotation: 0
     state: enabled
 - name: blocks_tag_debug_0
@@ -171,7 +171,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 460.0]
+    coordinate: [520, 324.0]
     rotation: 0
     state: enabled
 - name: blocks_tag_gate_0
@@ -190,7 +190,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 316.0]
+    coordinate: [520, 176.0]
     rotation: 0
     state: enabled
 - name: blocks_uchar_to_float_0
@@ -205,7 +205,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [752, 392.0]
+    coordinate: [744, 272.0]
     rotation: 0
     state: enabled
 - name: digital_ofdm_rx_0
@@ -232,7 +232,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 308.0]
+    coordinate: [232, 172.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -329,7 +329,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [928, 364.0]
+    coordinate: [912, 236.0]
     rotation: 0
     state: enabled
 - name: zeromq_sub_source_0
@@ -338,6 +338,7 @@ blocks:
     address: tcp://127.0.0.1:49201
     affinity: ''
     alias: ''
+    bind: 'False'
     comment: USRP sample rate = 768kHz
     hwm: '-1'
     key: ''
@@ -351,7 +352,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [24, 364.0]
+    coordinate: [8, 228.0]
     rotation: 0
     state: true
 
@@ -365,4 +366,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.11.0
+  grc_version: 3.10.12.0

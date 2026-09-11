@@ -51,7 +51,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 12.0]
+    coordinate: [296, 12.0]
     rotation: 0
     state: enabled
 - name: noise_volt
@@ -72,7 +72,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 12.0]
+    coordinate: [176, 12.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -96,7 +96,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [616, 12.0]
+    coordinate: [576, 16.0]
     rotation: 0
     state: enabled
 - name: time_offset
@@ -117,7 +117,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 12.0]
+    coordinate: [456, 12.0]
     rotation: 0
     state: enabled
 - name: blocks_throttle_0
@@ -136,7 +136,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 220.0]
+    coordinate: [440, 224.0]
     rotation: 0
     state: enabled
 - name: channels_channel_model_0
@@ -166,7 +166,9 @@ blocks:
     address: tcp://127.0.0.1:49201
     affinity: ''
     alias: ''
+    bind: 'True'
     comment: ''
+    drop_on_hwm: 'True'
     hwm: '-1'
     key: ''
     pass_tags: 'False'
@@ -177,7 +179,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [624, 196.0]
+    coordinate: [624, 188.0]
     rotation: 0
     state: true
 - name: zeromq_sub_source_0
@@ -186,6 +188,7 @@ blocks:
     address: tcp://127.0.0.1:49203
     affinity: ''
     alias: ''
+    bind: 'False'
     comment: ''
     hwm: '-1'
     key: ''
@@ -199,7 +202,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 196.0]
+    coordinate: [8, 188.0]
     rotation: 0
     state: true
 
@@ -210,4 +213,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.11.0
+  grc_version: 3.10.12.0

@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [296, 652.0]
+    coordinate: [256, 472.0]
     rotation: 0
     state: enabled
 - name: header_formatter
@@ -56,7 +56,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [936, 196.0]
+    coordinate: [928, 192.0]
     rotation: 0
     state: enabled
 - name: header_mod
@@ -68,7 +68,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 132.0]
+    coordinate: [816, 120.0]
     rotation: 0
     state: enabled
 - name: input_file_name
@@ -80,7 +80,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [280, 12.0]
+    coordinate: [256, 16.0]
     rotation: 0
     state: enabled
 - name: input_file_size
@@ -92,7 +92,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [280, 76.0]
+    coordinate: [256, 88.0]
     rotation: 0
     state: enabled
 - name: length_tag_key
@@ -104,7 +104,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 196.0]
+    coordinate: [816, 192.0]
     rotation: 0
     state: enabled
 - name: occupied_carriers
@@ -117,7 +117,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1360, 788.0]
+    coordinate: [1352, 640.0]
     rotation: 0
     state: enabled
 - name: packet_len
@@ -129,7 +129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [456, 228.0]
+    coordinate: [456, 216.0]
     rotation: 0
     state: enabled
 - name: payload_mod
@@ -141,7 +141,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1000, 132.0]
+    coordinate: [984, 120.0]
     rotation: 0
     state: enabled
 - name: pilot_carriers
@@ -153,7 +153,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1504, 788.0]
+    coordinate: [1496, 640.0]
     rotation: 0
     state: enabled
 - name: pilot_symbols
@@ -165,7 +165,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1632, 788.0]
+    coordinate: [1616, 640.0]
     rotation: 0
     state: enabled
 - name: rolloff
@@ -177,7 +177,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [832, 692.0]
+    coordinate: [808, 512.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -189,7 +189,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 860.0]
+    coordinate: [520, 720.0]
     rotation: 0
     state: enabled
 - name: sync_word1
@@ -206,7 +206,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1360, 868.0]
+    coordinate: [1352, 712.0]
     rotation: 0
     state: enabled
 - name: sync_word2
@@ -220,7 +220,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1504, 868.0]
+    coordinate: [1480, 712.0]
     rotation: 0
     state: enabled
 - name: analog_random_source_x_0
@@ -240,7 +240,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 116.0]
+    coordinate: [16, 124.0]
     rotation: 0
     state: disabled
 - name: blocks_file_source_0
@@ -280,7 +280,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 948.0]
+    coordinate: [200, 800.0]
     rotation: 0
     state: enabled
 - name: blocks_repack_bits_bb_0
@@ -302,7 +302,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 340.0]
+    coordinate: [888, 344.0]
     rotation: 0
     state: enabled
 - name: blocks_repeat_0
@@ -320,7 +320,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [248, 444.0]
+    coordinate: [224, 368.0]
     rotation: 0
     state: disabled
 - name: blocks_stream_mux_0
@@ -377,7 +377,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 940.0]
+    coordinate: [352, 792.0]
     rotation: 0
     state: enabled
 - name: blocks_tagged_stream_mux_0
@@ -418,7 +418,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 940.0]
+    coordinate: [520, 792.0]
     rotation: 0
     state: true
 - name: blocks_vector_source_x_0
@@ -439,7 +439,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 428.0]
+    coordinate: [16, 436.0]
     rotation: 0
     state: disabled
 - name: blocks_vector_source_x_0_0_0
@@ -459,7 +459,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 340.0]
+    coordinate: [16, 348.0]
     rotation: 0
     state: enabled
 - name: digital_chunks_to_symbols_xx_0
@@ -539,7 +539,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 716.0]
+    coordinate: [176, 544.0]
     rotation: 0
     state: enabled
 - name: digital_ofdm_cyclic_prefixer_0
@@ -558,7 +558,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [832, 756.0]
+    coordinate: [808, 580.0]
     rotation: 0
     state: enabled
 - name: digital_packet_headergenerator_bb_0
@@ -575,7 +575,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 276.0]
+    coordinate: [888, 272.0]
     rotation: 0
     state: enabled
 - name: epy_block_0
@@ -638,14 +638,14 @@ blocks:
     vectorSize: fft_len
   states:
     _io_cache: ('Debug OFDM Block', 'blk', [('vectorSize', '64'), ('header_mod', '<gnuradio.digital.digital_python.constellation_bpsk
-      object at 0x77bc506211f0>'), ('payload_mod', '<gnuradio.digital.digital_python.constellation_qpsk
-      object at 0x77bc506211b0>'), ('debug', 'False')], [('0', 'complex', 64)], [('0',
+      object at 0x7fd3a5cd81f0>'), ('payload_mod', '<gnuradio.digital.digital_python.constellation_qpsk
+      object at 0x7fd3a5cd8030>'), ('debug', 'False')], [('0', 'complex', 64)], [('0',
       'complex', 64)], 'Embedded Python Block example - a simple multiply const',
       ['debug'])
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 748.0]
+    coordinate: [376, 572.0]
     rotation: 0
     state: true
 - name: epy_block_1
@@ -724,7 +724,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [632, 740.0]
+    coordinate: [608, 564.0]
     rotation: 0
     state: enabled
 - name: import_0
@@ -737,7 +737,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 12.0]
+    coordinate: [176, 16.0]
     rotation: 0
     state: enabled
 - name: import_0_0
@@ -750,7 +750,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 60.0]
+    coordinate: [176, 64.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0
@@ -831,7 +831,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [744, 1020.0]
+    coordinate: [728, 868.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -928,7 +928,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [744, 924.0]
+    coordinate: [728, 772.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_1
@@ -1025,7 +1025,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1424, 196.0]
+    coordinate: [1424, 188.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_1_0
@@ -1122,7 +1122,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1424, 404.0]
+    coordinate: [1424, 412.0]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -1135,7 +1135,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1040, 772.0]
+    coordinate: [1016, 600.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0_0_0
@@ -1161,7 +1161,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [744, 868.0]
+    coordinate: [728, 720.0]
     rotation: 0
     state: enabled
 - name: virtual_source_0_0_0
@@ -1174,7 +1174,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [24, 772.0]
+    coordinate: [8, 600.0]
     rotation: 0
     state: enabled
 - name: virtual_source_0_0_0_0
@@ -1187,7 +1187,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [24, 948.0]
+    coordinate: [8, 800.0]
     rotation: 0
     state: enabled
 - name: virtual_source_1
@@ -1200,7 +1200,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 860.0]
+    coordinate: [880, 728.0]
     rotation: 0
     state: enabled
 - name: zeromq_pub_sink_0
@@ -1209,7 +1209,9 @@ blocks:
     address: tcp://127.0.0.1:49203
     affinity: ''
     alias: ''
+    bind: 'True'
     comment: USRP sample rate = 768kHz
+    drop_on_hwm: 'True'
     hwm: '-1'
     key: ''
     pass_tags: 'False'
@@ -1220,7 +1222,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1080, 836.0]
+    coordinate: [1072, 692.0]
     rotation: 0
     state: true
 
@@ -1257,4 +1259,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.11.0
+  grc_version: 3.10.12.0
