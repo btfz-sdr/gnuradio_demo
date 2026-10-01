@@ -39,6 +39,10 @@ sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 65536)
 
 # ---- 初始化 Matplotlib 绘图 ----
 plt.ion()  
+
+# 禁止刷新时把窗口置顶并抢占焦点
+plt.rcParams['figure.raise_window'] = False
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # ---- 利用传入的 span 动态计算 X 轴坐标 ----
