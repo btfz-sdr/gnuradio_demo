@@ -1,0 +1,15 @@
+# pkg-config file for liquid-dsp
+
+prefix=${prefix}
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: liquid-dsp
+Description: Software-defined radio digital signal processing library
+Version: 1.8.3
+URL: https://liquidsdr.org
+License: MIT
+Libs: -L${libdir} -lliquid
+Libs.private: -lm -lm
+Cflags: -I${includedir}
