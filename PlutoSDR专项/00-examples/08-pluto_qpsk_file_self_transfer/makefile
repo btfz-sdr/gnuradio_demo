@@ -5,9 +5,10 @@
 # ============================================================
 
 # 0. 资源路径（相对工程根目录向上找 toolchain）
-TOOLCHAIN_PATH = $(CURDIR)/../toolchain/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf
-IIO_BASE       = $(CURDIR)/../toolchain/libiio
-LIQUID_BASE    = $(CURDIR)/../toolchain/liquid-dsp
+TOOLCHAIN_PATH  = $(CURDIR)/../toolchain/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf
+SYSROOT_PATH    = ../toolchain/sysroot
+IIO_BASE        = ../toolchain/libiio
+LIQUID_BASE     = ../toolchain/liquid-dsp
 LIQUID_LIB_FILE = $(LIQUID_BASE)/lib/libliquid.a
 
 # 1. 编译器/工具
@@ -16,14 +17,21 @@ STRIP   = $(TOOLCHAIN_PATH)/bin/arm-linux-gnueabihf-strip
 
 # 2. 编译选项
 #    -march/-mcpu/-mfpu 激活 cortex-a9 NEON 加速，保证 symsync 实时性
+#    --sysroot 强制约束编译器和链接器到目标板的 sysroot 环境中，彻底解决 GLIBC 版本不匹配问题
 #    -Wl,--allow-shlib-undefined 只链接 libiio，忽略其子依赖缺失（部署时由板子补齐）
 CFLAGS  = -I$(IIO_BASE)/usr/include \
           -I$(LIQUID_BASE)/include \
+          --sysroot=$(SYSROOT_PATH) \
           -Wall -O3 -march=armv7-a -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard
-LDFLAGS = -L$(IIO_BASE)/usr/lib/arm-linux-gnueabihf \
+
+LDFLAGS = --sysroot=$(SYSROOT_PATH) \
+          -L$(SYSROOT_PATH)/lib \
+          -L$(SYSROOT_PATH)/usr/lib \
+          -L$(IIO_BASE)/usr/lib/arm-linux-gnueabihf \
           -L$(IIO_BASE)/lib/arm-linux-gnueabihf \
+          -lm \
           $(LIQUID_LIB_FILE) \
-          -liio -lm -Wl,--allow-shlib-undefined
+          -liio -Wl,--allow-shlib-undefined
 
 TARGET  = pluto_qpsk_file_self_transfer
 PLUTO  ?= root@pluto.local
@@ -64,3 +72,4 @@ simtest:
 	bash tools/sim_test.sh
 
 .PHONY: build clean run sim simtest
+
