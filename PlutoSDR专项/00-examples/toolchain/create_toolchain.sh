@@ -145,7 +145,6 @@ else
     # 目录不存在或为空，安全清理后重建
     rm -rf sysroot
 
-    mkdir sysroot
     wget https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.38/sysroot-v0.38.tar.gz
     tar -xzf sysroot-v0.38.tar.gz
     mv staging sysroot
