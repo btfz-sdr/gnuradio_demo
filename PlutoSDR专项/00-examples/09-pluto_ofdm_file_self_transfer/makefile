@@ -1,37 +1,4 @@
-# ============================================================
-# OFDM 文件自收发（PlutoSDR 真机）
-# 工程根目录：本 makefile 所在目录（11-pluto_ofdm_file_self_transfer）
-# 所有路径均相对本目录，迁移整个工程目录即可。
-# ============================================================
-
-# 0. 资源路径（相对工程根目录向上找 toolchain）
-TOOLCHAIN_PATH  = $(CURDIR)/../toolchain/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf
-SYSROOT_PATH    = ../toolchain/sysroot
-IIO_BASE        = ../toolchain/libiio
-LIQUID_BASE     = ../toolchain/liquid-dsp
-LIQUID_LIB_FILE = $(LIQUID_BASE)/lib/libliquid.a
-
-# 1. 编译器/工具
-CC      = $(TOOLCHAIN_PATH)/bin/arm-linux-gnueabihf-gcc
-STRIP   = $(TOOLCHAIN_PATH)/bin/arm-linux-gnueabihf-strip
-
-# 2. 编译选项
-#    -march/-mcpu/-mfpu 激活 cortex-a9 NEON 加速，保证 FFT/OFDM 实时性
-#    --sysroot 强制约束编译器和链接器到目标板的 sysroot 环境中，彻底解决 GLIBC 版本不匹配问题
-#    -Wl,--allow-shlib-undefined 只链接 libiio，忽略其子依赖缺失（部署时由板子补齐）
-CFLAGS  = -I$(IIO_BASE)/usr/include \
-          -I$(LIQUID_BASE)/include \
-          --sysroot=$(SYSROOT_PATH) \
-          -Wall -O3 -march=armv7-a -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard
-
-LDFLAGS = --sysroot=$(SYSROOT_PATH) \
-          -L$(SYSROOT_PATH)/lib \
-          -L$(SYSROOT_PATH)/usr/lib \
-          -L$(IIO_BASE)/usr/lib/arm-linux-gnueabihf \
-          -L$(IIO_BASE)/lib/arm-linux-gnueabihf \
-          -lm \
-          $(LIQUID_LIB_FILE) \
-          -liio -Wl,--allow-shlib-undefined
+include ../toolchain/toolchain.mk
 
 TARGET  = pluto_ofdm_file_self_transfer
 PLUTO  ?= root@pluto.local
@@ -57,10 +24,10 @@ clean:
 
 # 4. 上机（先编译，scp 二进制 + 测试文件到板子，再 ssh 运行）
 run: clean build
-	scp -O $(TARGET) $(PLUTO):~/
-	scp -O doc/01-simulation/$(IN_FILE) $(PLUTO):~/$(IN_FILE)
+	@sshpass -p '$(SSH_PASS)' scp -O $(SSH_OPTS) $(TARGET) $(PLUTO):~/
+	@sshpass -p '$(SSH_PASS)' scp -O $(SSH_OPTS) doc/01-simulation/$(IN_FILE) $(PLUTO):~/$(IN_FILE)
 	@echo "------------------------------------------------"
-	ssh -t $(PLUTO) "chmod +x ~/$(TARGET); ./$(TARGET) $(RUN_ARGS)"
+	@sshpass -p '$(SSH_PASS)' ssh $(SSH_OPTS) -t $(PLUTO) "chmod +x ~/$(TARGET); ./$(TARGET) $(RUN_ARGS)"
 
 # 5. 宿主机仿真（用 doc/01-simulation 里的单文件版验证算法）
 sim:
