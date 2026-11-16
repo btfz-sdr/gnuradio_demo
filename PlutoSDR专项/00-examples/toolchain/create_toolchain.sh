@@ -13,6 +13,42 @@ is_ready() {
 }
 
 # ==========================================
+# 1.5 检查并自动安装 sshpass 工具
+# ==========================================
+if ! command -v sshpass &> /dev/null; then
+    echo "=> 检测到系统未安装 sshpass，开始自动识别系统并安装..."
+    
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        OS_NAME=$ID
+    else
+        OS_NAME=$(uname -s)
+    fi
+
+    if [[ "$OS_NAME" == "ubuntu" || "$OS_NAME" == "debian" || "$OS_NAME" == "linuxmint" ]]; then
+        echo "=> 检测到 Ubuntu/Debian 系列系统，使用 apt 安装 sshpass..."
+        sudo apt-get update && sudo apt-get install -y sshpass
+    elif [[ "$OS_NAME" == "arch" || "$OS_NAME" == "manjaro" ]]; then
+        echo "=> 检测到 Arch Linux 系列系统，使用 pacman 安装 sshpass..."
+        sudo pacman -S --noconfirm sshpass
+    else
+        echo "❌ 错误: 无法自动识别您的发行版 ($OS_NAME)，请手动安装 sshpass 后重试："
+        echo "   Ubuntu/Debian: sudo apt-get install sshpass"
+        echo "   Arch Linux:    sudo pacman -S sshpass"
+        exit 1
+    fi
+    
+    # 再次验证是否安装成功
+    if ! command -v sshpass &> /dev/null; then
+        echo "❌ 错误: sshpass 安装失败，请检查网络或手动安装。"
+        exit 1
+    fi
+    echo "=> sshpass 安装成功！"
+else
+    echo "=> sshpass 已就绪。"
+fi
+
+# ==========================================
 # 2. 根据架构差异化准备 gcc-linaro 工具链
 # ==========================================
 if [ "${HOST_ARCH}" = "x86_64" ]; then
@@ -63,6 +99,9 @@ elif [ "${HOST_ARCH}" = "aarch64" ]; then
             echo "❌ 错误: 未找到解压后的 armv7-rpi2-linux-gnueabihf 目录！"
             exit 1
         fi
+
+        # 赋予解压出来的目录写权限，防止 mv 报 Permission denied
+        chmod +w arm-linux-gnueabihf-aarch64-host/armv7-rpi2-linux-gnueabihf
 
         # 直接把解压出来的目录移动到当前根目录下（保留原名 armv7-rpi2-linux-gnueabihf）
         mv arm-linux-gnueabihf-aarch64-host/armv7-rpi2-linux-gnueabihf ./
