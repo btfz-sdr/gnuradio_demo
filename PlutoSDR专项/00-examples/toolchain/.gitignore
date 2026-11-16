@@ -1,3 +1,4 @@
 libiio
 sysroot
 gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf
+armv7-rpi2-linux-gnueabihf
